@@ -1,0 +1,26 @@
+footer {
+	width: 100%;
+	padding-top: 20px;
+	display: block;
+	background-color: #32ade6;
+}
+.footer-copyright {
+	font-weight: 300;
+	overflow: hidden;
+	height: 50px;
+	line-height: 50px;
+	color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(51, 51, 51, 0.08);
+}
+.container {
+	width: 85%;
+	padding: 0 1.5rem;
+	margin: 0 auto;
+	max-width: 1280px;
+}
+footer p {
+	border-left: 3px solid #ffffff;
+	padding-left: 15px;
+	text-indent: 20px;
+	color: #ececec;
+}
