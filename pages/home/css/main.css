@@ -1,13 +1,13 @@
 body {
-	background-color: #181A1B;
-	color: #aaaaaa;
+	background-color: var(--background);
+	color: var(--text);
 	padding: 0;
 	margin: 0;
 	perspective: 1px;
 	transform-style: preserve-3d;
 	height: 100%;
 	overflow-x: hidden;
-	font-family: 'Roboto';
+	font-family: var(--font);
 }
 
 .parallax {

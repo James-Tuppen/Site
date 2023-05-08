@@ -1,0 +1,17 @@
+/*===Variables===*/
+body {
+    --font: 'Roboto';
+    --theme: #32ade6;
+}
+
+/*Dark mode*/
+body.dark-mode {
+    --background: #181A1B;
+    --text: #aaa;
+}
+
+/*Light mode*/
+body:not(.dark-mode) {
+    --background: #fff;
+    --text: #202124;
+}

@@ -2,7 +2,7 @@ footer {
 	width: 100%;
 	padding-top: 20px;
 	display: block;
-	background-color: #32ade6;
+	background-color: var(--theme);
 }
 .footer-copyright {
 	font-weight: 300;

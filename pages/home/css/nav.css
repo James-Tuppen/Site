@@ -43,7 +43,7 @@ div.navbar {
 	top: -60px;
 	left: 0;
 	width: 100%;
-	background: #32ade6;
+	background: var(--theme);
 	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
 	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
