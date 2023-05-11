@@ -1,4 +1,3 @@
-//<script defer type='text/javascript'>
 /*
 var width = window.innerWidth || document.documentElement.clientWidth;
 function navBarAppear(ev) {
@@ -16,11 +15,11 @@ function navBarAppear(ev) {
 }
 window.onscroll = navBarAppear;
 */
-//</script>
 
 let scrollPos = 0;
 
 function navBarCheck(ev) {
+	if (!(document.body.classList.contains('navbar-auto'))) {return}
 	let nav = document.getElementsByClassName('navbar')[0]
     if (window.scrollY < scrollPos) {
 		nav.classList.add('sticky');

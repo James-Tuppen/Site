@@ -28,3 +28,8 @@ body:not(.dark-mode) {
     --background: #fff;
     --text: #202124;
 }
+
+
+a {
+    color: white
+}
