@@ -1,3 +1,76 @@
+/*
+This is the CSS for the top nav bar that appears throughout the entire site
+*/
+
+/*=== MAIN ===*/
+div.navbar {
+	transition: top 0.3s !important;
+	position: sticky;
+	top: -60px;
+	left: 0;
+	width: 100%;
+	background: var(--themeTransparent);
+	-webkit-backdrop-filter: var(--themeBlur);
+	backdrop-filter: var(--themeBlur);
+	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
+	z-index: 9999999;
+}
+
+/*Keep navbar at top of viewport*/
+div.navbar.sticky {
+	position: sticky;
+	top: 0px;
+}
+
+/*=== BUTTONS === */
+/*Removes the underline from the navbar button text*/
+.navbar a {
+	text-decoration: none;
+}
+
+/*Don't change the cursor if the button is already active*/
+li.active > a.nav-button {
+	cursor: default;
+}
+
+div.navbar > ul.navbar-container {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+	overflow: hidden;
+}
+div.navbar > ul > li.nav-right {
+	float: right;
+}
+div.navbar > ul > li.nav-left {
+	float: left;
+}
+div.navbar > ul > li {
+	background-color: rgba(0, 0, 0, 0);
+	transition: all 0.5s ease;
+}
+
+div.navbar > ul > li.active {
+	background-color: rgba(0, 0, 0, 0.18);
+}
+div.navbar > ul > li:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+a.nav-button {
+	font-family: 'Bruno Ace SC';
+	line-height: 60px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: rgba(228, 241, 254, 1);
+	transition: all 0.5s ease;
+}
+
+
 /*The underline effect*/
 .left-underline {
 	display: inline-block;
@@ -29,68 +102,4 @@
 }
 .left-underline:hover:before, .left-underline:focus:before, .left-underline:active:before {
 	right: 0;
-}
-
-
-div.navbar.sticky {
-	position: sticky;
-	top: 0px;
-}
-
-div.navbar {
-	transition: top 0.3s !important;
-	position: sticky;
-	top: -60px;
-	left: 0;
-	width: 100%;
-	background: var(--themeTransparent);
-	-webkit-backdrop-filter: var(--themeBlur);
-	backdrop-filter: var(--themeBlur);
-	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	z-index: 9999999;
-}
-
-
-div.navbar > ul.navbar-container {
-	list-style-type: none;
-	margin: 0;
-	padding-left: 1em;
-	padding-right: 1em;
-	overflow: hidden;
-}
-div.navbar > ul > li.nav-item {
-	float: right;
-	background-color: rgba(0, 0, 0, 0.1);
-	transition: all 0.5s ease;
-}
-div.navbar > ul > li.active {
-	background-color: rgba(0, 0, 0, 0.18);
-}
-div.navbar > ul > li:hover {
-	background-color: rgba(0, 0, 0, 0.2);
-}
-
-
-
-a.nav-button {
-	font-family: 'Bruno Ace SC';
-	text-decoration: none;
-	line-height: 60px;
-	padding-left: 20px;
-	padding-right: 20px;
-	color: rgba(228, 241, 254, 1);
-	transition: all 0.5s ease;
-}
-a.nav-button:hover {
-	text-decoration: none;
-}
-li.active > a.nav-button {
-	cursor: default;
-}
-
-.brand-logo {
-	float: left;
-	cursor: default;
 }

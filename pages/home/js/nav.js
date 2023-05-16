@@ -30,3 +30,19 @@ function navBarCheck(ev) {
 
 }
 window.addEventListener('scroll', navBarCheck);
+
+$(document).ready(function() {
+	$(window).scroll(function() {
+		var scrollPos = $(window).scrollTop()
+		var navH = $('.navbar').height()
+		$('.section').each(function(i) {
+			var offT = $(this).offset().top;
+			console.log(''.concat(i, ': ', offT-scrollPos-navH))
+			if((offT-scrollPos-navH) <= 0) {
+				$('.active').removeClass('active')
+				$('.nav-item').eq(i).addClass('active')
+				//console.log(i)
+			}
+		})
+  	})
+})
