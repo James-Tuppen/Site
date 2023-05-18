@@ -28,3 +28,9 @@ body:not(.dark-mode) {
 a {
     color: #fff
 }
+
+/* === DEBUGGING === */
+* {
+    outline: 1px solid red;
+    opacity: 0.8;
+}

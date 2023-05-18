@@ -37,11 +37,11 @@ $(document).ready(function() {
 		var navH = $('.navbar').height()
 		$('.section').each(function(i) {
 			var offT = $(this).offset().top;
-			console.log(''.concat(i, ': ', offT-scrollPos-navH))
-			if((offT-scrollPos-navH) <= 0) {
-				$('.active').removeClass('active')
-				$('.nav-item').eq(i).addClass('active')
-				//console.log(i)
+			console.log(''.concat(i, ': ', offT-scrollPos))
+			if((offT-scrollPos) <= 0) {
+				$('.nav-item.active').removeClass('active')
+				console.log((i - ($('.nav-item').length)) * -1)
+				$('.nav-item').eq(((i - ($('.nav-item').length)) * -1) % $('.nav-item').length).addClass('active')
 			}
 		})
   	})
