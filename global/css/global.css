@@ -34,3 +34,9 @@ a {
     outline: 1px solid red;
     opacity: 0.8;
 }
+
+body {
+    min-width: 600px;
+    width: auto !important;
+    width: 1000px;
+ }

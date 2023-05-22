@@ -31,17 +31,24 @@ function navBarCheck(ev) {
 }
 window.addEventListener('scroll', navBarCheck);
 
+
+//-This does some (satasfying) maths to calculate what button to highlight
+//-Due to the CSS of the right buttons, they are in the oppoite order to the left buttons
+function calcNavButtonPosition(docPos) {
+	return ((docPos - ($('.nav-item').length)) * -1) % $('.nav-item').length
+}
+
+//-Highlight the nav button that links to the place that the user is scolled to
 $(document).ready(function() {
 	$(window).scroll(function() {
-		var scrollPos = $(window).scrollTop()
-		var navH = $('.navbar').height()
+		var scrollPosition = $(window).scrollTop()
+		var navbarHeight = $('.navbar').height()
 		$('.section').each(function(i) {
-			var offT = $(this).offset().top;
-			console.log(''.concat(i, ': ', offT-scrollPos))
-			if((offT-scrollPos) <= 0) {
+			var topOffset = $(this).offset().top;
+			//console.log(''.concat(i, ': ', topOffset-scrollPosition))
+			if((topOffset-scrollPosition-navbarHeight) < 0) {
 				$('.nav-item.active').removeClass('active')
-				console.log((i - ($('.nav-item').length)) * -1)
-				$('.nav-item').eq(((i - ($('.nav-item').length)) * -1) % $('.nav-item').length).addClass('active')
+				$('.nav-item').eq(calcNavButtonPosition(i)).addClass('active')
 			}
 		})
   	})
