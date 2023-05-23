@@ -39,17 +39,22 @@ function calcNavButtonPosition(docPos) {
 }
 
 //-Highlight the nav button that links to the place that the user is scolled to
+function highlightNavButton() {
+	let scrollPosition = $(window).scrollTop();
+	let navbarHeight = $('.navbar').height();
+	$('.section').each(function(i) {
+		let topOffset = $(this).offset().top;
+		//console.log(''.concat(i, ': ', topOffset-scrollPosition))
+		if((topOffset-scrollPosition-navbarHeight) < 0) {
+			$('.nav-item.active').removeClass('active');
+			$('.nav-item').eq(calcNavButtonPosition(i)).addClass('active');
+		}
+	})
+}
+
 $(document).ready(function() {
 	$(window).scroll(function() {
-		var scrollPosition = $(window).scrollTop()
-		var navbarHeight = $('.navbar').height()
-		$('.section').each(function(i) {
-			var topOffset = $(this).offset().top;
-			//console.log(''.concat(i, ': ', topOffset-scrollPosition))
-			if((topOffset-scrollPosition-navbarHeight) < 0) {
-				$('.nav-item.active').removeClass('active')
-				$('.nav-item').eq(calcNavButtonPosition(i)).addClass('active')
-			}
-		})
-  	})
+		highlightNavButton();
+  	});
+	highlightNavButton();
 })
