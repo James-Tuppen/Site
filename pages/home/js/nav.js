@@ -53,8 +53,10 @@ function highlightNavButton() {
 }
 
 $(document).ready(function() {
+	//-Call the scroll function when the scroll event listener is fired
 	$(window).scroll(function() {
 		highlightNavButton();
   	});
+	//-Call once for when the page is loaded
 	highlightNavButton();
 })

@@ -10,26 +10,6 @@ body {
 	font-family: var(--font);
 }
 
-.parallax {
-	height: 90vh;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-}
-
-hgroup {
-	display: inline-block;
-	text-align: center;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	color: #fff;
-	border: 5px solid #fff;
-	padding: .5em 3em;
-	background-color: rgba(0,0,0,.2);
-	z-index: 2;
-}
 .row {
 	width: 80%;
 	padding-left: 10%;

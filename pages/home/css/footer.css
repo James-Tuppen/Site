@@ -5,11 +5,9 @@ footer {
 	background-color: var(--theme);
 }
 .footer-copyright {
-	font-weight: 300;
-	overflow: hidden;
 	height: 50px;
 	line-height: 50px;
-	color: rgba(255, 255, 255, 0.8);
+	color: var(--text);
 	background-color: rgba(51, 51, 51, 0.08);
 }
 .container {
@@ -17,10 +15,11 @@ footer {
 	padding: 0 1.5rem;
 	margin: 0 auto;
 	max-width: 1280px;
+	color: var(--secondaryText);
 }
 footer p {
 	border-left: 3px solid #ffffff;
 	padding-left: 15px;
 	text-indent: 20px;
-	color: #ececec;
+	color: var(--secondaryText);
 }

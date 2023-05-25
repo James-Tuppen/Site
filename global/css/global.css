@@ -1,10 +1,15 @@
+/*=== CONSISTENCY ===*/
 *, *:before, *:after {
     -webkit-box-sizing: border-box; 
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-/* === VARIABLES === */
+a {
+    color: #fff
+}
+
+/*=== VARIABLES ===*/
 body {
     --font: 'Roboto';
     --theme: #32ade6;
@@ -14,23 +19,21 @@ body {
 /*Dark mode*/
 body.dark-mode {
     --background: #181A1B;
-    --text: #aaa;
+    --text: #b3b3b3;
+    --secondaryText: #f0f0f0;
     --themeBlur: blur(6px) brightness(110%);
 }
 
 /*Light mode*/
 body:not(.dark-mode) {
-    --background: #fff;
+    --background: #f0f0f0;
     --text: #202124;
     --themeBlur: blur(5px) brightness(90%);
 }
 
-a {
-    color: #fff
-}
 
 /* === DEBUGGING === */
-* {
+/* * {
     outline: 1px solid red;
     opacity: 0.8;
 }
@@ -38,4 +41,4 @@ a {
 body {
     min-width: 600px;
     width: auto !important;
-}
+} */
