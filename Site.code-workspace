@@ -5,6 +5,16 @@
 		}
 	],
 	"settings": {
-		"hide-files.files": []
+		"hide-files.files": [],
+		"hidefiles.configurationType": "global",
+		"files.exclude": {
+			"**/.git": true,
+			"**/.svn": true,
+			"**/.hg": true,
+			"**/CVS": true,
+			"**/.DS_Store": true,
+			".vscode/": true
+		},
+		"hidefiles.selectedProfile": "Main"
 	}
 }

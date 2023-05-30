@@ -36,9 +36,9 @@ body:not(.dark-mode) {
 /* * {
     outline: 1px solid red;
     opacity: 0.8;
-}
+} */
 
-body {
+/* body {
     min-width: 600px;
     width: auto !important;
 } */

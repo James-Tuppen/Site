@@ -10,6 +10,37 @@ body {
 	font-family: var(--font);
 }
 
+/*I wrote this to allow putting elements in a split formation, but I don't think I did the resizing very well*/
+.dual-section {
+	width: 100%;
+	height: fit-content;
+	outline: 1px solid red;
+}
+/* Clearfix lol */
+.dual-section::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.left-dual-section {
+	width: 44%;
+	margin-left: 4%;
+	margin-right: 4%;
+	float: left;
+	
+	height: fit-content;
+	background: red;
+}
+.right-dual-section {
+	width: 44%;
+	margin-right: 4%;
+	float: right;
+	
+	height: fit-content;
+}
+
+
+
 .row {
 	width: 80%;
 	padding-left: 10%;
@@ -32,8 +63,9 @@ body {
 	padding-right: 5px;
 }
 
+/* Create the parallax scrolling effect */
 .parallax-image {
-	/* Create the parallax scrolling effect */
+	backdrop-filter: blur(10px);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
