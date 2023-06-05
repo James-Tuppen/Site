@@ -9,6 +9,13 @@ a {
     color: #fff
 }
 
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	overflow-x: hidden;
+}
+
 /*=== VARIABLES ===*/
 body {
     --font: 'Roboto';
@@ -21,7 +28,7 @@ body.dark-mode {
     --background: #181A1B;
     --text: #b3b3b3;
     --secondaryText: #f0f0f0;
-    --themeBlur: blur(6px) brightness(110%);
+    --themeBlur: blur(5px) brightness(110%);
 }
 
 /*Light mode*/
@@ -32,7 +39,7 @@ body:not(.dark-mode) {
 }
 
 
-/* === DEBUGGING === */
+/*=== DEBUGGING ===*/
 /* * {
     outline: 1px solid red;
     opacity: 0.8;
@@ -42,3 +49,10 @@ body:not(.dark-mode) {
     min-width: 600px;
     width: auto !important;
 } */
+
+/*=== MAIN ===*/
+body {
+	background-color: var(--background);
+	color: var(--text);
+	font-family: var(--font);
+}
