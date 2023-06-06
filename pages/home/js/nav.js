@@ -46,16 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	highlightNavButton();
 });
 
-function addNavClickEvents() {
-	const navbarHeight = document.querySelector('.navbar').offsetHeight;
-	document.querySelectorAll('.nav-item').forEach(function(navItem) {
-		const element = document.querySelector('#section-1');
-		const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-		const offsetPosition = elementPosition - navbarHeight;
+// function addNavClickEvents() {
+// 	const navbarHeight = document.querySelector('.navbar').offsetHeight;
+// 	document.querySelectorAll('.nav-item').forEach(function(navItem) {
+// 		const element = document.querySelector('#section-1');
+// 		const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+// 		const offsetPosition = elementPosition - navbarHeight;
 
-		window.scrollTo({
-			top: offsetPosition,
-			behavior: 'smooth'
-		})
-	})
-}
+// 		window.scrollTo({
+// 			top: offsetPosition,
+// 			behavior: 'smooth'
+// 		})
+// 	})
+// }
