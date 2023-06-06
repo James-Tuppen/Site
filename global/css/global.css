@@ -45,10 +45,10 @@ body:not(.dark-mode) {
     opacity: 0.8;
 } */
 
-/* body {
+body {
     min-width: 600px;
     width: auto !important;
-} */
+}
 
 /*=== MAIN ===*/
 body {
