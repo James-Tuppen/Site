@@ -16,47 +16,46 @@ function navBarAppear(ev) {
 window.onscroll = navBarAppear;
 */
 
-let scrollPos = 0;
-
-function navBarCheck(ev) {
-	if (!(document.body.classList.contains('navbar-auto'))) {return}
-	let nav = document.getElementsByClassName('navbar')[0]
-    if (window.scrollY < scrollPos) {
-		nav.classList.add('sticky');
-	} else {
-		nav.classList.remove('sticky');
-	};
-	scrollPos = window.scrollY;
-
-}
-window.addEventListener('scroll', navBarCheck);
-
-
-//-This does some (satasfying) maths to calculate what button to highlight
-//-Due to the CSS of the right buttons, they are in the oppoite order to the left buttons
+//This does some (satasfying) maths to calculate what button to highlight
+//Due to the CSS of the right buttons, they are in the oppoite order to the left buttons
 function calcNavButtonPosition(docPos) {
-	return ((docPos - ($('.nav-item').length)) * -1) % $('.nav-item').length
+	return ((docPos - (document.querySelectorAll('.nav-item').length)) * -1) % document.querySelectorAll('.nav-item').length;
 }
 
-//-Highlight the nav button that links to the place that the user is scolled to
+//Highlight the nav button that links to the place that the user is scolled to
 function highlightNavButton() {
-	let scrollPosition = $(window).scrollTop();
-	let navbarHeight = $('.navbar').height();
-	$('.section').each(function(i) {
-		let topOffset = $(this).offset().top;
-		//console.log(''.concat(i, ': ', topOffset-scrollPosition))
-		if((topOffset-scrollPosition-navbarHeight) < 0) {
-			$('.nav-item.active').removeClass('active');
-			$('.nav-item').eq(calcNavButtonPosition(i)).addClass('active');
+	let scrollPosition = window.scrollY;
+	let navbarHeight = document.querySelector('.navbar').offsetHeight;
+	document.querySelectorAll('.section').forEach(function(section, i) {
+		let topOffset = section.offsetTop;
+		if ((topOffset - scrollPosition - navbarHeight) < 0) {
+			if (document.querySelector('.nav-item.active')) {
+				document.querySelector('.nav-item.active').classList.remove('active');
+			}
+			document.querySelectorAll('.nav-item')[calcNavButtonPosition(i)].classList.add('active');
 		}
+	});
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	//Call the scroll function when the scroll event listener is fired
+	window.addEventListener('scroll', function() {
+		highlightNavButton();
+	});
+	//Call once for when the page is loaded
+	highlightNavButton();
+});
+
+function addNavClickEvents() {
+	const navbarHeight = document.querySelector('.navbar').offsetHeight;
+	document.querySelectorAll('.nav-item').forEach(function(navItem) {
+		const element = document.querySelector('#section-1');
+		const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+		const offsetPosition = elementPosition - navbarHeight;
+
+		window.scrollTo({
+			top: offsetPosition,
+			behavior: 'smooth'
+		})
 	})
 }
-
-$(document).ready(function() {
-	//-Call the scroll function when the scroll event listener is fired
-	$(window).scroll(function() {
-		highlightNavButton();
-  	});
-	//-Call once for when the page is loaded
-	highlightNavButton();
-})

@@ -26,12 +26,12 @@ div.navbar.sticky {
 
 /*=== BUTTONS === */
 /*Removes the underline from the navbar button text*/
-.navbar a {
+.navbar div {
 	text-decoration: none;
 }
 
 /*Don't change the cursor if the button is already active*/
-li.active > a.nav-button {
+li.active > div.nav-button {
 	cursor: default;
 }
 
@@ -61,7 +61,7 @@ div.navbar > ul > li:hover {
 }
 
 
-a.nav-button {
+div.nav-button {
 	font-family: 'Bruno Ace SC';
 	line-height: 60px;
 	padding-left: 20px;
