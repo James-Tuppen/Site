@@ -66,13 +66,13 @@ div.nav-button {
 	line-height: 60px;
 	padding-left: 20px;
 	padding-right: 20px;
-	color: rgba(228, 241, 254, 1);
+	color: var(--secondaryText);
 	transition: all 0.5s ease;
 }
 
 
 /*The underline effect*/
-.left-underline {
+.nav-button {
 	display: inline-block;
 	vertical-align: middle;
 	-webkit-transform: translateZ(0);
@@ -84,7 +84,7 @@ div.nav-button {
 	position: relative;
 	overflow: hidden;
 }
-.left-underline:before {
+.nav-button:before {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -100,6 +100,6 @@ div.nav-button {
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
-.left-underline:hover:before, .left-underline:focus:before, .left-underline:active:before {
+.nav-button:hover:before, .nav-button:focus:before, .nav-button:active:before {
 	right: 0;
 }

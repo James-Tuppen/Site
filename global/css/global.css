@@ -27,7 +27,7 @@ body {
 body.dark-mode {
     --background: #181A1B;
     --text: #b3b3b3;
-    --secondaryText: #f0f0f0;
+    --secondaryText: #fcfcfc;
     --themeBlur: blur(5px) brightness(110%);
 }
 

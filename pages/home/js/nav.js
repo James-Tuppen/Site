@@ -37,6 +37,21 @@ function highlightNavButton() {
 	});
 }
 
+
+function addNavClickEvents() {
+	const navbarHeight = document.querySelector('.navbar').offsetHeight;
+	document.querySelectorAll('.nav-item').forEach(function(navItem) {
+		const element = document.getElementById(navItem.getAttribute('targetID'));
+		const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+		const offsetPosition = elementPosition - navbarHeight;
+		
+		window.scrollTo({
+			top: offsetPosition, behavior: 'smooth'
+		})
+	})
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	//Call the scroll function when the scroll event listener is fired
 	window.addEventListener('scroll', function() {
@@ -44,18 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 	//Call once for when the page is loaded
 	highlightNavButton();
+
+	//Add click events to the nav buttons
+	addNavClickEvents();
 });
-
-// function addNavClickEvents() {
-// 	const navbarHeight = document.querySelector('.navbar').offsetHeight;
-// 	document.querySelectorAll('.nav-item').forEach(function(navItem) {
-// 		const element = document.querySelector('#section-1');
-// 		const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-// 		const offsetPosition = elementPosition - navbarHeight;
-
-// 		window.scrollTo({
-// 			top: offsetPosition,
-// 			behavior: 'smooth'
-// 		})
-// 	})
-// }
