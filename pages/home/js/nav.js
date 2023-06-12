@@ -40,13 +40,15 @@ function highlightNavButton() {
 
 function addNavClickEvents() {
 	const navbarHeight = document.querySelector('.navbar').offsetHeight;
-	document.querySelectorAll('.nav-item').forEach(function(navItem) {
-		const element = document.getElementById(navItem.getAttribute('targetID'));
-		const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-		const offsetPosition = elementPosition - navbarHeight;
-		
-		window.scrollTo({
-			top: offsetPosition, behavior: 'smooth'
+	document.querySelectorAll('.nav-button').forEach(function(navItem) {
+		navItem.onclick = (function() {
+			const element = document.querySelector(navItem.getAttribute('targetElement'));
+			const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+			const offsetPosition = elementPosition - navbarHeight + 1;
+			
+			window.scrollTo({
+				top: offsetPosition, behavior: 'smooth'
+			})
 		})
 	})
 }
