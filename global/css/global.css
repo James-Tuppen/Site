@@ -1,26 +1,11 @@
-/*=== CONSISTENCY ===*/
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-a {
-    color: #fff
-}
-
-body {
-	padding: 0;
-	margin: 0;
-	height: 100%;
-	overflow-x: hidden;
-}
-
 /*=== VARIABLES ===*/
 body {
     --font: 'Roboto';
+    --font-size: 15px;
     --theme: #32ade6;
     --themeTransparent: rgba(60, 193, 255, 0.8);
+
+    --min-width: 600px;
 }
 
 /*Dark mode*/
@@ -39,20 +24,38 @@ body:not(.dark-mode) {
 }
 
 
+/*=== CONSISTENCY ===*/
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    color: #fff
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	overflow-x: hidden;
+    min-width: var(--min-width);
+    width: auto !important;
+}
+
+
+/*=== MAIN ===*/
+body {
+    color: var(--text);
+	font-family: var(--font);
+    font-size: var(--font-size);
+	background-color: var(--background);
+}
+
+
 /*=== DEBUGGING ===*/
 /* * {
     outline: 1px solid red;
     opacity: 0.8;
 } */
-
-body {
-    min-width: 600px;
-    width: auto !important;
-}
-
-/*=== MAIN ===*/
-body {
-	background-color: var(--background);
-	color: var(--text);
-	font-family: var(--font);
-}

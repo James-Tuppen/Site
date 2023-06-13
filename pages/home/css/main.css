@@ -1,8 +1,17 @@
+/*-Center column text*/
+.column {
+	width: 80%;
+	max-width: 840px;
+	margin: 0 auto;
+}
+
+/*-Dual content*/
 /*I wrote this to allow putting elements in a split formation, but I don't think I did the resizing very well*/
 .dual-section {
 	width: 100%;
 	height: fit-content;
-	outline: 1px solid red;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 /*Clearfix lol*/
 .dual-section::after {
@@ -26,6 +35,17 @@
 	height: fit-content;
 }
 
+/*Resizing is hella broke, welcome to responsive design ig*/
+.dual-section img {
+	/* width: 100%; */
+
+	border-radius: 4% 0 0 4%;
+	--mask: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9004528985507246) 70%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.6) 92%, rgba(0,0,0,0) 100%);
+	-webkit-mask: var(--mask);
+	mask: var(--mask);
+}
+
+/*-Parallax images*/
 /*Tthe parallax scrolling effect. Not too sure about its compatibility though*/
 .parallax-image {
 	background-attachment: fixed;
@@ -33,7 +53,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
 
 
 /*=== UNACCEPTED ===*/
@@ -59,17 +78,4 @@
 	content: "";
 	display: table;
 	clear: both;
-}
-
-
-
-
-
-
-.right-dual-section {
-	vertical-align: 30px;
-}
-
-.right-dual-section > img {
-	width: 50%;
 }
