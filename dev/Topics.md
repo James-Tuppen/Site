@@ -7,6 +7,7 @@ This could include things people do online. Maybe I could make an alt frontend f
 ### Being safe online
 ~~Boring, but could be done.~~ (Oh I could make this interesting) Maybe I could educate about the safety of https, proxy, vpn ect.
 - Use Python to White Hat hack someone's PC. Would need to be Windows tho.
+- NOTE: I made the script, maybe I could put it in one of these pages as an example?
 ### Supporting an ageing population
 Basically the same as the first point, but a very simple and accessible UI for older people. Idk what kind of sites they use tho.
 
