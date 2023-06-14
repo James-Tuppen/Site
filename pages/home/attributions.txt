@@ -1,0 +1,1 @@
+"./images/laptop-warning.png": BitDefender (https://www.bitdefender.com)

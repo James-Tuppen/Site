@@ -3,12 +3,16 @@ This is the CSS for the top nav bar that appears throughout the entire site
 */
 
 /*=== MAIN ===*/
-div.navbar {
+.navbar {
+	font-family: var(--navbar-font);
+	color: var(--secondaryText);
+
 	transition: top 0.3s !important;
 	position: sticky;
 	top: -60px;
 	left: 0;
 	width: 100%;
+	font-size: var(--navbar-font-size);
 	background: var(--themeTransparent);
 	-webkit-backdrop-filter: var(--themeBlur);
 	backdrop-filter: var(--themeBlur);
@@ -19,7 +23,7 @@ div.navbar {
 }
 
 /*Keep navbar at top of viewport if it has the .sticky class*/
-div.navbar.sticky {
+.navbar.sticky {
 	position: sticky;
 	top: 0px;
 }
@@ -28,6 +32,18 @@ div.navbar.sticky {
 /*Don't change the cursor if the button is already active*/
 li.active > div.nav-button {
 	cursor: default;
+}
+
+.navbar * {
+	user-select: none;
+}
+
+.navbar a {
+	text-decoration: none;
+}
+
+.nav-button:not(.active) {
+	cursor: pointer;
 }
 
 div.navbar > ul.navbar-container {
@@ -57,11 +73,9 @@ div.navbar > ul > li:hover {
 
 
 div.nav-button {
-	font-family: 'Bruno Ace SC';
 	line-height: 60px;
 	padding-left: 20px;
 	padding-right: 20px;
-	color: var(--secondaryText);
 	transition: all 0.5s ease;
 }
 

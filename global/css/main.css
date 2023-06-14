@@ -1,6 +1,6 @@
 /*-Center column text*/
 .column {
-	width: 80%;
+	width: 70%;
 	max-width: 840px;
 	margin: 0 auto;
 }
@@ -10,8 +10,8 @@
 .dual-section {
 	width: 100%;
 	height: fit-content;
-	padding-bottom: 20px;
-	padding-top: 20px;
+	padding-bottom: 30px;
+	padding-top: 30px;
 }
 /*Clearfix lol*/
 .dual-section::after {
@@ -55,23 +55,20 @@
 	background-size: cover;
 }
 
-
-/*=== UNACCEPTED ===*/
 .row {
-	width: 80%;
-	padding-left: 10%;
-	padding-right: 10%;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
 	padding-top: 15px;
 	padding-bottom: 15px;
-	min-height: 150px;
 }
 .row > .third-column {
 	width: 30%;
 	height: 100%;
 	box-sizing: border-box;
 	float: left;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 3.2%;
+	padding-right: 3.2%;
 }
 
 /*More clearfix*/

@@ -1,7 +1,14 @@
 /*=== VARIABLES ===*/
 body {
-    --font: 'Roboto';
-    --font-size: 15px;
+    --font: 'Rajdhani', Helvetica, sans-serif;
+    --font-size: 18px;
+
+    --navbar-font: 'Bruno Ace SC', Helvetica, sans-serif;
+    --navbar-font-size: 15px;
+
+    --footer-font: 'Roboto', Helvetica, sans-serif;
+    --footer-font-size: 15px;
+    
     --theme: #32ade6;
     --themeTransparent: rgba(60, 193, 255, 0.8);
 
@@ -32,7 +39,7 @@ body:not(.dark-mode) {
 }
 
 a {
-    color: #fff
+    color: inherit;
 }
 
 body {

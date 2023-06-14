@@ -1,4 +1,7 @@
 footer {
+	font-family: var(--footer-font);
+	font-size: var(--footer-font-size);
+
 	padding-top: 6px;
 	padding-bottom: 6px;
 	width: 100%;
