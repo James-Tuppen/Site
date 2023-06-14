@@ -1,5 +1,4 @@
-/*
-var width = window.innerWidth || document.documentElement.clientWidth;
+//This hides the navbar when scrolling
 function navBarAppear(ev) {
 	let nav = document.getElementsByClassName('navbar')[0]
 	if (window.pageYOffset > 200) {
@@ -13,8 +12,6 @@ function navBarAppear(ev) {
 		nav.style.top = 'auto';
 	};
 }
-window.onscroll = navBarAppear;
-*/
 
 //This does some (satasfying) maths to calculate what button to highlight
 //Due to the CSS of the right buttons, they are in the oppoite order to the left buttons
@@ -40,7 +37,7 @@ function highlightNavButton() {
 
 function addNavClickEvents() {
 	const navbarHeight = document.querySelector('.navbar').offsetHeight;
-	document.querySelectorAll('.nav-button').forEach(function(navItem) {
+	document.querySelectorAll('.nav-scroll').forEach(function(navItem) {
 		navItem.onclick = (function() {
 			const element = document.querySelector(navItem.getAttribute('targetElement'));
 			const elementPosition = element.getBoundingClientRect().top + window.scrollY;
@@ -58,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	//Call the scroll function when the scroll event listener is fired
 	window.addEventListener('scroll', function() {
 		highlightNavButton();
+		//navBarAppear();
 	});
 	//Call once for when the page is loaded
 	highlightNavButton();

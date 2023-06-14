@@ -25,11 +25,6 @@ div.navbar.sticky {
 }
 
 /*=== BUTTONS === */
-/*Removes the underline from the navbar button text*/
-.navbar div {
-	text-decoration: none;
-}
-
 /*Don't change the cursor if the button is already active*/
 li.active > div.nav-button {
 	cursor: default;
