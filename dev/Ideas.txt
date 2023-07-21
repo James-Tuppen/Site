@@ -1,1 +1,12 @@
-Test
+Maybe use a left nav bar to show text sections. This also saves space in the top nav.
+
+
+--column-width: 100px;
+
+
+width: min(var(--column-width) 100%)
+
+OR
+
+width: 100%
+max-width: var(--column-width);
