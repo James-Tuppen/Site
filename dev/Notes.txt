@@ -1,0 +1,1 @@
+I hope to standardise this layout, (follow other common layouts). MDN docs is a perfect example of site structuring. Pages should cover how the reader can protect themselves from these threats. Use sources and quotes.
