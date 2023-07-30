@@ -1,18 +1,28 @@
-.size-test {
+/*
+Naming system
+
+#content
+The main column part of the page that contains all of the content
+
+*/
+
+
+/*=== MAIN ===*/
+#content {
 	--column-width: 400px;
 	width: min(var(--column-width), 100%);
 	outline: 1px solid red;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content > p {
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 
-/*-Center column text*/
-.column {
-	width: 60%;
-	max-width: 720px;
-	margin: 0 auto;
-}
-
-/*-Dual content*/
+/*=== DUAL CONTENT ===*/
 /*I wrote this to allow putting elements in a split formation, but I don't think I did the resizing very well*/
 .dual-section {
 	width: 100%;
@@ -64,7 +74,7 @@
 	mask: var(--mask);
 }
 
-/*-Parallax images*/
+/*=== IMAGE BREAK ===*/
 /*The parallax scrolling effect. Not too sure about its compatibility though*/
 .parallax-image {
 	background-attachment: fixed;
@@ -73,6 +83,7 @@
 	background-size: cover;
 }
 
+/*=== THIRD ROW ===*/
 .row {
 	width: 85%;
 	margin-left: 15%;

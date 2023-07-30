@@ -1,6 +1,6 @@
 //This hides the navbar when scrolling
 function navBarAppear(ev) {
-	let nav = document.getElementsByClassName('navbar')[0]
+	let nav = document.getElementById('navbar')
 	if (window.pageYOffset > 200) {
 		nav.style.position = 'sticky';
 		nav.style.top = '-80px';
@@ -22,7 +22,7 @@ function calcNavButtonPosition(docPos) {
 //Highlight the nav button that links to the place that the user is scolled to
 function highlightNavButton() {
 	let scrollPosition = window.scrollY;
-	let navbarHeight = document.querySelector('.navbar').offsetHeight;
+	let navbarHeight = document.getElementById('navbar').offsetHeight;
 	document.querySelectorAll('.section').forEach(function(section, i) {
 		let topOffset = section.offsetTop;
 		if ((topOffset - scrollPosition - navbarHeight) < 0) {
@@ -36,7 +36,7 @@ function highlightNavButton() {
 
 
 function addNavClickEvents() {
-	const navbarHeight = document.querySelector('.navbar').offsetHeight;
+	const navbarHeight = document.getElementById('navbar').offsetHeight;
 	document.querySelectorAll('.nav-scroll').forEach(function(navItem) {
 		navItem.onclick = (function() {
 			const element = document.querySelector(navItem.getAttribute('targetElement'));
