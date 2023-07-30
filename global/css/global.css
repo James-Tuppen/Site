@@ -1,5 +1,7 @@
 /*=== VARIABLES ===*/
 body {
+    --min-width: 0px;
+
     --font: 'Rajdhani', Helvetica, sans-serif;
     --font-size: 16px;
 
@@ -11,23 +13,30 @@ body {
     
     --theme: #32ade6;
     --themeTransparent: rgba(60, 193, 255, 0.8);
-
-    --min-width: 0px;
 }
 
 /*Dark mode*/
 body.dark-mode {
     --background: #181A1B;
-    --text: #b3b3b3;
-    --secondaryText: #fcfcfc;
-    --themeBlur: blur(5px) brightness(110%);
+    --contentBackground: rgba(0, 0, 0, 0.8);
+    --text: #dadada;
+    --navText: #eeeeee;
+    --footerText: #ffffff;
+
+    --contentBlur: blur(10px);
+    --navBlur: blur(5px) brightness(110%);
 }
 
 /*Light mode*/
 body:not(.dark-mode) {
     --background: #f0f0f0;
+    --contentBackground: rgba(255, 255, 255, 0.8);
     --text: #202124;
-    --themeBlur: blur(5px) brightness(90%);
+    --navText: #d6d6d6;
+    --footerText: #d6d6d6;
+
+    --contentBlur: blur(10px);
+    --navBlur: blur(5px) brightness(90%);
 }
 
 
@@ -43,20 +52,20 @@ a {
 }
 
 body {
+	height: 100%;
+    width: auto !important;
+    min-width: var(--min-width);
 	padding: 0;
 	margin: 0;
-	height: 100%;
 	overflow-x: hidden;
-    min-width: var(--min-width);
-    width: auto !important;
 }
 
 
 /*=== MAIN ===*/
 body {
-    color: var(--text);
-	font-family: var(--font);
     font-size: var(--font-size);
+	font-family: var(--font);
+    color: var(--text);
 	background-color: var(--background);
 }
 

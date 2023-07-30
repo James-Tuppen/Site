@@ -1,19 +1,23 @@
-/*
-Naming system
-
-#content
-The main column part of the page that contains all of the content
-
-*/
-
-
 /*=== MAIN ===*/
+body {
+	background-image: url("../image/1186090.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*=== CONTENT ===*/
 #content {
-	--column-width: 400px;
+	--column-width: 700px;
 	width: min(var(--column-width), 100%);
-	outline: 1px solid red;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
+
+	background: var(--contentBackground);
+	border-radius: 10px;
+	backdrop-filter: var(--contentBlur);
 }
 
 #content > p {

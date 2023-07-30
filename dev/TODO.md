@@ -15,3 +15,4 @@
 - Make dual sections resizable with calc()
 - Slide-in animations for dual sections
 - Remember to bold important parts of the text
+-  Shadows

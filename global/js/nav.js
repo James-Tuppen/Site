@@ -1,7 +1,7 @@
 //This hides the navbar when scrolling
 function navBarAppear(ev) {
 	let nav = document.getElementById('navbar')
-	if (window.pageYOffset > 200) {
+	if (window.scrollY > 200) {
 		nav.style.position = 'sticky';
 		nav.style.top = '-80px';
 		window.setTimeout(function() {
@@ -41,7 +41,7 @@ function addNavClickEvents() {
 		navItem.onclick = (function() {
 			const element = document.querySelector(navItem.getAttribute('targetElement'));
 			const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-			const offsetPosition = elementPosition - navbarHeight + 1;
+			const offsetPosition = elementPosition - navbarHeight;
 			
 			window.scrollTo({
 				top: offsetPosition, behavior: 'smooth'
