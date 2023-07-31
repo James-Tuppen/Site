@@ -1,12 +1,17 @@
 /*=== VARIABLES ===*/
 body {
     --min-width: 0px;
+    --banner-height: 50px;
+    --border-radius: 10px;
 
     --font: 'Rajdhani', Helvetica, sans-serif;
     --font-size: 16px;
 
     --navbar-font: 'Bruno Ace SC', Helvetica, sans-serif;
     --navbar-font-size: 15px;
+    
+    --title-font: 'Bruno Ace SC', Helvetica, sans-serif;
+    --title-font-size: 20px;
 
     --footer-font: 'Roboto', Helvetica, sans-serif;
     --footer-font-size: 15px;

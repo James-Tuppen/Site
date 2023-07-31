@@ -2,14 +2,14 @@
 
 ## Element list
 
-#navbar
-#content
-#title-area
-.paragraph
-.image
-.dual-section
-.image-break
-#footer
+#navbar - needs changes, use sticky or fixed pos?
+#content - needs wrapping in a div
+#title-area - not done
+.paragraph - not done
+.image - not done
+.dual-section - needs a rewrite
+.image-break - slight tweaks
+#footer - needs transparency
 
 ## General structure
 html
