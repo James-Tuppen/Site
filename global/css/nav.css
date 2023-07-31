@@ -81,34 +81,36 @@ div.nav-button {
 
 
 /*The underline effect*/
-.nav-button {
-	display: inline-block;
-	vertical-align: middle;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-	position: relative;
-	overflow: hidden;
-}
-.nav-button:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	left: 0;
-	right: 100%;
-	bottom: 0;
-	background: #ECECEC;
-	height: 4px;
-	-webkit-transition-property: right;
-	transition-property: right;
-	-webkit-transition-duration: 0.15s;
-	transition-duration: 0.15s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-.nav-button:hover:before, .nav-button:focus:before, .nav-button:active:before {
-	right: 0;
+@media (any-hover: hover) {
+	.nav-button {
+		display: inline-block;
+		vertical-align: middle;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-moz-osx-font-smoothing: grayscale;
+		position: relative;
+		overflow: hidden;
+	}
+	.nav-button:before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		right: 100%;
+		bottom: 0;
+		background: #ECECEC;
+		height: 4px;
+		-webkit-transition-property: right;
+		transition-property: right;
+		-webkit-transition-duration: 0.15s;
+		transition-duration: 0.15s;
+		-webkit-transition-timing-function: ease-out;
+		transition-timing-function: ease-out;
+	}
+	.nav-button:hover:before, .nav-button:focus:before, .nav-button:active:before {
+		right: 0;
+	}
 }

@@ -3,9 +3,9 @@ body
 
 #content
 
-#title-area
+#title-area - add image
 .paragraph - done
-.image
+.image - done, but doesn't seem very practical
 .dual-section
 .image-break - done
 */
@@ -32,7 +32,7 @@ body {
 	margin-top: 20px;
 
 	background: var(--contentBackground);
-	border-radius: var(--border-radius);
+	border-radius: var(--content-border-radius);
 	-webkit-backdrop-filter: var(--contentBlur);
 	backdrop-filter: var(--contentBlur);
 }
@@ -70,33 +70,41 @@ background-image: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3));
 	-webkit-mask: var(--mask);
 	mask: var(--mask);
 	
-	border-radius: var(--border-radius) var(--border-radius) 0 0;
+	border-radius: var(--content-border-radius) var(--content-border-radius) 0 0;
 }
 
 
 
 /*=== PARAGRAPH ===*/
 .paragraph {
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: var(--paragraph-padding);
+	padding-right: var(--paragraph-padding);
 }
 
 
 
 /*=== IMAGE ===*/
+.image {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	
+	border-radius: 6px;
+}
 
 
 
 /*=== DUAL CONTENT ===*/
-/*I wrote this to allow putting elements in a split formation, but I don't think I did the resizing very well*/
 .dual-section {
 	width: 100%;
 	height: fit-content;
-	padding-bottom: 30px;
-	padding-top: 30px;
-
-	padding-left: 15%; /** Fix this*/
-	padding-right: 15%;
+	display: flex;
+	padding: var(--dual-padding);
 }
 /*Clearfix lol*/
 .dual-section::after {
@@ -104,23 +112,14 @@ background-image: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3));
 	clear: both;
 	display: table;
 }
-.left-dual-section {
-	width: 44%;
-	margin-left: 4%;
-	margin-right: 4%;
-	float: left;
-	
+.dual-section > div {
 	height: fit-content;
 }
-.right-dual-section {
-	width: 44%;
-	margin-right: 4%;
-	float: right;
-	
-	height: fit-content;
+.dual-section > div:last-child {
+	margin-left: var(--dual-gap);
 }
 
-/*Resizing is hella broke, welcome to responsive design ig*/
+
 .left-dual-section img {
 	/*width: 100%;*/
     
