@@ -53,6 +53,7 @@ body {
 	line-height: var(--banner-height);
 	font-family: var(--title-font);
 	font-size: var(--title-font-size);
+	color: var(--titleText);
 }
 #banner {
 	width: 100%;
@@ -61,7 +62,8 @@ body {
 	position: relative;
 	top: calc(var(--banner-height) * -1);
 	
-background-image: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3));
+	/* background-image: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3)); */
+	background-image: url(../image/231311.jpg);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -100,10 +102,11 @@ background-image: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3));
 
 
 /*=== DUAL CONTENT ===*/
+
 .dual-section {
 	width: 100%;
 	height: fit-content;
-	display: flex;
+	display: var(--dual-display);
 	padding: var(--dual-padding);
 }
 /*Clearfix lol*/
@@ -116,8 +119,10 @@ background-image: linear-gradient(rgba(255, 0, 0, 0.3), rgba(255, 255, 0, 0.3));
 	height: fit-content;
 }
 .dual-section > div:last-child {
-	margin-left: var(--dual-gap);
+	margin-left: var(--dual-gap-x);
+	margin-top: var(--dual-gap-y);
 }
+
 
 
 .left-dual-section img {

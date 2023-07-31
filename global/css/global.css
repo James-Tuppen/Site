@@ -1,51 +1,74 @@
 /*=== VARIABLES ===*/
 body {
+    /*-Sizing*/
     --min-width: 0px;
-    --banner-height: 50px;
-    --content-border-radius: 10px;
-    --dual-padding: 15px;
-    --dual-gap: 10px;
-    --paragraph-padding: 20px;
-
+    
+    /*-Fonts*/
     --font: 'Rajdhani', Helvetica, sans-serif;
     --font-size: 16px;
-
+    
     --navbar-font: 'Bruno Ace SC', Helvetica, sans-serif;
     --navbar-font-size: 15px;
     
     --title-font: 'Bruno Ace SC', Helvetica, sans-serif;
     --title-font-size: 20px;
-
+    
     --footer-font: 'Roboto', Helvetica, sans-serif;
     --footer-font-size: 15px;
     
+    /*-Colors*/
     --theme: #32ade6;
     --themeTransparent: rgba(60, 193, 255, 0.8);
+    
+    /*-Elements*/
+    --banner-height: 50px;
+    --content-border-radius: 10px;
+    --dual-padding: 15px;
+    --paragraph-padding: 20px;
 }
 
-/*Dark mode*/
+/*-Mobile layout changes*/
+@media (min-width: 400px) {
+    body {
+        --dual-display: flex;
+        --dual-gap-x: 15px;
+        --dual-gap-y: 0;
+    }
+}
+@media (max-width: 400px) {
+    body {
+        --dual-display: block;
+        --dual-gap-x: 0;
+        --dual-gap-y: 20px;
+    }
+}
+
+/*-Dark mode*/
 body.dark-mode {
-    --background: #181A1B;
+    --background: #181A1B; /*Fallback*/
     --contentBackground: rgba(0, 0, 0, 0.8);
     --text: #dadada;
     --navText: #eeeeee;
     --footerText: #ffffff;
+    --titleText: #ffffff;
 
     --contentBlur: blur(10px);
     --navBlur: blur(5px) brightness(110%);
 }
 
-/*Light mode*/
+/*-Light mode*/
 body:not(.dark-mode) {
-    --background: #f0f0f0;
+    --background: #f0f0f0; /*Fallback*/
     --contentBackground: rgba(255, 255, 255, 0.8);
     --text: #202124;
     --navText: #d6d6d6;
     --footerText: #d6d6d6;
+    --titleText: #ffffff;
 
     --contentBlur: blur(10px);
     --navBlur: blur(5px) brightness(90%);
 }
+
 
 
 /*=== CONSISTENCY ===*/
@@ -69,6 +92,7 @@ body {
 }
 
 
+
 /*=== MAIN ===*/
 body {
     font-size: var(--font-size);
@@ -76,6 +100,7 @@ body {
     color: var(--text);
 	background-color: var(--background);
 }
+
 
 
 /*=== DEBUGGING ===*/
