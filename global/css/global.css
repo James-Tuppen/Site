@@ -22,6 +22,7 @@ body {
     
     /*-Elements*/
     --banner-height: 50px;
+    --content-margin: 20px;
     --content-border-radius: 10px;
     --dual-padding: 15px;
     --paragraph-padding: 20px;

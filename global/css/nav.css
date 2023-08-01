@@ -19,7 +19,7 @@ This is the CSS for the top nav bar that appears throughout the entire site
 	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
 	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	z-index: 999;
+	z-index: 2;
 }
 
 /*Keep navbar at top of viewport if it has the .sticky class*/

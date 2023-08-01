@@ -10,19 +10,46 @@ body
 .image-break - done
 */
 
-#main-wrapper {
-	--left-nav-width: 100px;
-	display: flex;
+@media (min-width: 500px) {
+	#main-wrapper {
+		--left-nav-width: 100px;
+		display: flex;
+	}
+	#main-wrapper > * {
+		display: inline-block;
+	}
+	#left-nav-wrapper {
+		height: 100px;
+		flex-grow: 0;
+		flex-shrink: 0;
+		flex-basis: var(--left-nav-width);
+	}
 }
-#main-wrapper > * {
-	display: inline-block;
+
+/*Mobile view*/
+@media (max-width: 500px) {	#main-wrapper {
+		--left-nav-width: 100px;
+		display: flex;
+	}
+	#left-nav-wrapper {
+		height: 0;
+		width: 0;
+		z-index: 1;
+	}
+	#content-wrapper {
+		width: 100%;
+	}
 }
-#left-nav-wrapper {
-	height: 100px;
-	background: red;
-	flex-grow: 0;
-	flex-shrink: 0;
-	flex-basis: var(--left-nav-width);
+
+#left-nav {
+	width: var(--left-nav-width);
+	height: 300px; /**Change to fit-content when it has content*/
+	margin-top: var(--content-margin);
+	margin-right: 20px;
+	background: var(--contentBackground);
+	border-radius: 0 var(--content-border-radius) var(--content-border-radius) 0;
+	-webkit-backdrop-filter: var(--contentBlur);
+	backdrop-filter: var(--contentBlur);
 }
 
 
@@ -47,7 +74,8 @@ body {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 20px;
+	margin-top: var(--content-margin);
+	margin-bottom: var(--content-margin);
 
 	background: var(--contentBackground);
 	border-radius: var(--content-border-radius);
