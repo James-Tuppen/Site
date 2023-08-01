@@ -6,10 +6,25 @@ body
 #title-area - add image
 .paragraph - done
 .image - done, but doesn't seem very practical
-.dual-section
+.dual-section - looks done, but needs testing with images
 .image-break - done
 */
 
+#main-wrapper {
+	display: flex;
+	outline: 1px solid green;
+}
+#left-nav-wrapper, #content-wrapper {
+	outline: 1px solid red;
+	background: rgba(0, 0, 0, 0.8);
+}
+#left-nav-wrapper {
+	flex-basis: 100px;
+	flex-shrink: 1;
+}
+#content-wrapper {
+	flex-grow: 1;
+}
 
 
 /*=== MAIN ===*/
@@ -26,7 +41,10 @@ body {
 /*=== CONTENT ===*/
 #content {
 	--column-width: 700px;
-	width: min(var(--column-width), 100%);
+	/*This singular line caused me 14 hours of troubleshooting*/
+	/*width: min(var(--column-width), 100%);*/
+	max-width: var(--column-width);
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 20px;

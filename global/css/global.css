@@ -28,14 +28,14 @@ body {
 }
 
 /*-Mobile layout changes*/
-@media (min-width: 400px) {
+@media (min-width: 500px) {
     body {
         --dual-display: flex;
         --dual-gap-x: 15px;
         --dual-gap-y: 0;
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     body {
         --dual-display: block;
         --dual-gap-x: 0;
