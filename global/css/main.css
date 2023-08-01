@@ -11,10 +11,6 @@ body
 */
 
 @media (min-width: 500px) {
-	#main-wrapper {
-		--left-nav-width: 100px;
-		display: flex;
-	}
 	#main-wrapper > * {
 		display: inline-block;
 	}
@@ -27,10 +23,7 @@ body
 }
 
 /*Mobile view*/
-@media (max-width: 500px) {	#main-wrapper {
-		--left-nav-width: 100px;
-		display: flex;
-	}
+@media (max-width: 500px) {
 	#left-nav-wrapper {
 		height: 0;
 		width: 0;
@@ -40,6 +33,13 @@ body
 		width: 100%;
 	}
 }
+
+#main-wrapper {
+	--left-nav-width: 100px;
+	display: flex;
+}
+
+/** MAKE THE LEFT NAV STICKY, IT SHOULD FOLLOW THE SCROLLING*/
 
 #left-nav {
 	width: var(--left-nav-width);
