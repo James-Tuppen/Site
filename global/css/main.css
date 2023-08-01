@@ -11,20 +11,20 @@ body
 */
 
 #main-wrapper {
+	--left-nav-width: 100px;
 	display: flex;
-	outline: 1px solid green;
 }
-#left-nav-wrapper, #content-wrapper {
-	outline: 1px solid red;
-	background: rgba(0, 0, 0, 0.8);
+#main-wrapper > * {
+	display: inline-block;
 }
 #left-nav-wrapper {
-	flex-basis: 100px;
-	flex-shrink: 1;
+	height: 100px;
+	background: red;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: var(--left-nav-width);
 }
-#content-wrapper {
-	flex-grow: 1;
-}
+
 
 
 /*=== MAIN ===*/
