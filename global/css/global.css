@@ -18,7 +18,7 @@ body {
     
     /*-Colors*/
     --theme: #32ade6;
-    --themeTransparent: rgba(60, 193, 255, 0.8);
+    --theme-transparent: rgba(60, 193, 255, 0.8);
     
     /*-Elements*/
     --banner-height: 50px;
@@ -29,11 +29,19 @@ body {
 }
 
 /*-Mobile layout changes*/
-@media (min-width: 500px) {
+@media (min-width: 501px) {
     body {
         --dual-display: flex;
         --dual-gap-x: 15px;
         --dual-gap-y: 0;
+    }
+    body.dark-mode {
+        --left-nav-background: rgba(0, 0, 0, 0.6); /*Same as content-background*/
+        --left-nav-blur: blur(10px); /*Same as content-blur*/
+    }
+    body:not(.dark-mode) {
+        --left-nav-background: rgba(255, 255, 255, 0.6);  /*Same as content-background*/
+        --left-nav-blur: blur(10px); /*Same as content-blur*/
     }
 }
 @media (max-width: 500px) {
@@ -42,32 +50,40 @@ body {
         --dual-gap-x: 0;
         --dual-gap-y: 20px;
     }
+    body.dark-mode {
+        --left-nav-background: rgba(0, 0, 0, 0.3);
+        --left-nav-blur: blur(5px);
+    }
+    body:not(.dark-mode) {
+        --left-nav-background: rgba(255, 255, 255, 0.3);
+        --left-nav-blur: blur(5px);
+    }
 }
 
 /*-Dark mode*/
 body.dark-mode {
     --background: #181A1B; /*Fallback*/
-    --contentBackground: rgba(0, 0, 0, 0.8);
+    --content-background: rgba(0, 0, 0, 0.6);
     --text: #dadada;
-    --navText: #eeeeee;
-    --footerText: #ffffff;
-    --titleText: #ffffff;
+    --nav-text: #eeeeee;
+    --footer-text: #ffffff;
+    --title-text: #ffffff;
 
-    --contentBlur: blur(10px);
-    --navBlur: blur(5px) brightness(110%);
+    --content-blur: blur(10px);
+    --top-nav-blur: blur(5px) brightness(110%);
 }
 
 /*-Light mode*/
 body:not(.dark-mode) {
     --background: #f0f0f0; /*Fallback*/
-    --contentBackground: rgba(255, 255, 255, 0.8);
+    --content-background: rgba(255, 255, 255, 0.8);
     --text: #202124;
-    --navText: #d6d6d6;
-    --footerText: #d6d6d6;
-    --titleText: #ffffff;
+    --nav-text: #d6d6d6;
+    --footer-text: #d6d6d6;
+    --title-text: #ffffff;
 
-    --contentBlur: blur(10px);
-    --navBlur: blur(5px) brightness(90%);
+    --content-blur: blur(10px);
+    --top-nav-blur: blur(5px) brightness(90%);
 }
 
 

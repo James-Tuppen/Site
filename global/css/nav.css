@@ -5,7 +5,7 @@ This is the CSS for the top nav bar that appears throughout the entire site
 /*=== MAIN ===*/
 #navbar {
 	font-family: var(--navbar-font);
-	color: var(--navText);
+	color: var(--nav-text);
 
 	transition: top 0.3s !important;
 	position: sticky;
@@ -13,9 +13,9 @@ This is the CSS for the top nav bar that appears throughout the entire site
 	left: 0;
 	width: 100%;
 	font-size: var(--navbar-font-size);
-	background: var(--themeTransparent);
-	-webkit-backdrop-filter: var(--navBlur);
-	backdrop-filter: var(--navBlur);
+	background: var(--theme-transparent);
+	-webkit-backdrop-filter: var(--top-nav-blur);
+	backdrop-filter: var(--top-nav-blur);
 	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
 	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
