@@ -10,7 +10,7 @@ body
 .image-break - done
 */
 
-@media (min-width: 500px) {
+@media (min-width: 501px) {
 	#main-wrapper {
 		--left-nav-width: 100px;
 		display: flex;
@@ -27,7 +27,8 @@ body
 }
 
 /*Mobile view*/
-@media (max-width: 500px) {	#main-wrapper {
+@media (max-width: 500px) {
+	#main-wrapper {
 		--left-nav-width: 100px;
 		display: flex;
 	}
@@ -46,10 +47,10 @@ body
 	height: 300px; /**Change to fit-content when it has content*/
 	margin-top: var(--content-margin);
 	margin-right: 20px;
-	background: var(--contentBackground);
+	background: var(--left-nav-background);
 	border-radius: 0 var(--content-border-radius) var(--content-border-radius) 0;
-	-webkit-backdrop-filter: var(--contentBlur);
-	backdrop-filter: var(--contentBlur);
+	-webkit-backdrop-filter: var(--left-nav-blur);
+	backdrop-filter: var(--left-nav-blur);
 }
 
 
@@ -77,10 +78,10 @@ body {
 	margin-top: var(--content-margin);
 	margin-bottom: var(--content-margin);
 
-	background: var(--contentBackground);
+	background: var(--content-background);
 	border-radius: var(--content-border-radius);
-	-webkit-backdrop-filter: var(--contentBlur);
-	backdrop-filter: var(--contentBlur);
+	-webkit-backdrop-filter: var(--content-blur);
+	backdrop-filter: var(--content-blur);
 }
 
 
@@ -99,7 +100,7 @@ body {
 	line-height: var(--banner-height);
 	font-family: var(--title-font);
 	font-size: var(--title-font-size);
-	color: var(--titleText);
+	color: var(--title-text);
 }
 #banner {
 	width: 100%;

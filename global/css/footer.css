@@ -6,9 +6,9 @@ footer {
 	font-family: var(--footer-font);
 	font-size: var(--footer-font-size);
 
-	background-color: var(--themeTransparent);
-	-webkit-backdrop-filter: var(--navBlur);
-	backdrop-filter: var(--navBlur);
+	background-color: var(--theme-transparent);
+	-webkit-backdrop-filter: var(--top-nav-blur);
+	backdrop-filter: var(--top-nav-blur);
 }
 
 .footer-contact {
@@ -17,7 +17,7 @@ footer {
 	padding-left: 30px;
 	line-height: 35px;
 
-	color: var(--footerText);
+	color: var(--footer-text);
 	background-color: rgba(51, 51, 51, 0.1);
 }
 
@@ -29,6 +29,6 @@ footer {
 	margin-left: 30px;
 	text-indent: 10px;
 
-	color: var(--footerText);
+	color: var(--footer-text);
 	border-left: 3px solid #ffffff;
 }
