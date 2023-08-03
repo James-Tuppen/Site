@@ -26,6 +26,8 @@ body {
     --content-border-radius: 10px;
     --dual-padding: 15px;
     --paragraph-padding: 20px;
+    --left-nav-margin-right: 20px;
+	--column-width: 700px; /** Rename to content-width*/
 }
 
 /*-Mobile layout changes*/
