@@ -68,6 +68,12 @@ calc(100vw - var(--column-width) - var(--left-nav-width) - 20px) gives spacing w
 	}
 }
 
+#left-nav-wrapper {
+	position: sticky;
+	align-self: flex-start;
+	top: 0;
+}
+
 #left-nav {
 	width: var(--left-nav-width);
 	height: 300px; /**Change to fit-content when it has content*/
