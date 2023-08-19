@@ -19,7 +19,7 @@ body
 
 	left: var(--left-nav-width);
 	
-	width: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width))) / 2)) * 2));
+	width: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2));
 }
 
 @media (min-width: 501px) {
@@ -66,16 +66,12 @@ body
 	height: 300px; /**Change to fit-content when it has content*/
 	margin-top: var(--content-margin);
 	margin-right: var(--left-nav-margin-right);
-	/*
-	margin-right: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width))) / 2)) * 2));
-	*/
+	/* margin-right: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2)); */
 	background: var(--left-nav-background);
 	border-radius: 0 var(--content-border-radius) var(--content-border-radius) 0;
 	-webkit-backdrop-filter: var(--left-nav-blur);
 	backdrop-filter: var(--left-nav-blur);
 }
-
-/** MAKE THE LEFT NAV STICKY, IT SHOULD FOLLOW THE SCROLLING*/
 
 
 
@@ -92,9 +88,9 @@ body {
 
 /*=== CONTENT ===*/
 #content {
-	/*This singular line caused me 14 hours of troubleshooting*/
-	/*width: min(var(--column-width), 100%);*/
-	max-width: var(--column-width);
+	/*This singular line caused me 14 hours of troubleshooting. Directly conflicts with flexbox*/
+	/*width: min(var(--content-width), 100%);*/
+	max-width: var(--content-width);
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -112,11 +108,12 @@ body {
 /*=== TITLE AREA ===*/
 #title-area {
 	width: 100%;
-	height: var(--banner-height);
+	height: fit-content;
+	position: relative;
 }
 #title {
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 	
 	padding-left: 25px;
 	
@@ -124,15 +121,14 @@ body {
 	font-family: var(--title-font);
 	font-size: var(--title-font-size);
 	color: var(--title-text);
-	
 }
 #banner {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
 	
-	position: relative;
-	top: calc(var(--banner-height) * -1);
+	position: absolute;
+	top: 0;
 	
 	background-image: url(../image/231311.jpg);
 	background-attachment: fixed;
@@ -140,9 +136,8 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	
-	--mask: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0.8) 75%, rgba(255,255,255,1) 100%);
-	-webkit-mask: var(--mask);
-	mask: var(--mask);
+	-webkit-mask: var(--banner-mask);
+	mask: var(--banner-mask);
 	
 	border-radius: var(--content-border-radius) var(--content-border-radius) 0 0;
 }
@@ -229,7 +224,7 @@ body {
 
 
 /*=== THIRD ROW ===*/
-.row {
+/* .row {
 	width: 85%;
 	margin-left: 15%;
 	margin-right: 15%;
@@ -243,11 +238,11 @@ body {
 	float: left;
 	padding-left: 3.2%;
 	padding-right: 3.2%;
-}
+} */
 
 /*More clearfix*/
-.row:after {
+/* .row:after {
 	content: "";
 	display: table;
 	clear: both;
-}
+} */
