@@ -21,6 +21,7 @@ body {
     --theme-transparent: rgba(60, 193, 255, 0.8);
     
     /*-Elements*/
+    --top-nav-height: 60px;
     --banner-height: 50px;
     --content-margin: 20px;
     --content-border-radius: 10px;

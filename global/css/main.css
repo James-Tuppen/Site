@@ -10,16 +10,6 @@ body
 .image-break - done
 */
 
-/*
-100vw = --left-nav-width | margin-right | margin: auto | --column-width | margin: auto
-
-if 100vw is wider than --column-width + --left-nav-width + margin-right
-calc(100vw - var(--column-width) - var(--left-nav-width) - 20px) gives spacing width maybe?
-
-
-
-*/
-
 #debug {
 	z-index: 99999999999999;
 	position: absolute;
@@ -28,10 +18,7 @@ calc(100vw - var(--column-width) - var(--left-nav-width) - 20px) gives spacing w
 	height: 10px;
 
 	left: var(--left-nav-width);
-	/*width: calc(var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width));*/
-	/* width: calc(((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width))) / 2) + 20px); */
-	/* width: calc(20px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width))) / 2)); */
-	/* width: min(20px, calc(20px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width))) / 2))); */
+	
 	width: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width))) / 2)) * 2));
 }
 
@@ -71,7 +58,7 @@ calc(100vw - var(--column-width) - var(--left-nav-width) - 20px) gives spacing w
 #left-nav-wrapper {
 	position: sticky;
 	align-self: flex-start;
-	top: 0;
+	top: var(--top-nav-height);
 }
 
 #left-nav {
@@ -79,7 +66,9 @@ calc(100vw - var(--column-width) - var(--left-nav-width) - 20px) gives spacing w
 	height: 300px; /**Change to fit-content when it has content*/
 	margin-top: var(--content-margin);
 	margin-right: var(--left-nav-margin-right);
+	/*
 	margin-right: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--column-width))) / 2)) * 2));
+	*/
 	background: var(--left-nav-background);
 	border-radius: 0 var(--content-border-radius) var(--content-border-radius) 0;
 	-webkit-backdrop-filter: var(--left-nav-blur);

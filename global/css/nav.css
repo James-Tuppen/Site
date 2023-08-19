@@ -9,7 +9,7 @@ This is the CSS for the top nav bar that appears throughout the entire site
 
 	transition: top 0.3s !important;
 	position: sticky;
-	top: -60px;
+	top: calc(var(--top-nav-height) * -1);
 	left: 0;
 	width: 100%;
 	font-size: var(--navbar-font-size);
@@ -73,7 +73,7 @@ div#navbar > ul > li:hover {
 
 
 div.nav-button {
-	line-height: 60px;
+	line-height: var(--top-nav-height);
 	padding-left: 20px;
 	padding-right: 20px;
 	transition: all 0.5s ease;
