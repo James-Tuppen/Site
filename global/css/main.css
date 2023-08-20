@@ -63,7 +63,7 @@ body
 
 #left-nav {
 	width: var(--left-nav-width);
-	height: 300px; /**Change to fit-content when it has content*/
+	height: fit-content;
 	margin-top: var(--content-margin);
 	margin-right: var(--left-nav-margin-right);
 	/* margin-right: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2)); */

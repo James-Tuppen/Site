@@ -1,10 +1,6 @@
-/*
-This is the CSS for the top nav bar that appears throughout the entire site
-*/
-
 /*=== MAIN ===*/
-#navbar {
-	font-family: var(--navbar-font);
+#top-nav {
+	font-family: var(--top-nav-font);
 	color: var(--nav-text);
 
 	transition: top 0.3s !important;
@@ -12,7 +8,7 @@ This is the CSS for the top nav bar that appears throughout the entire site
 	top: calc(var(--top-nav-height) * -1);
 	left: 0;
 	width: 100%;
-	font-size: var(--navbar-font-size);
+	font-size: var(--top-nav-font-size);
 	background: var(--theme-transparent);
 	-webkit-backdrop-filter: var(--top-nav-blur);
 	backdrop-filter: var(--top-nav-blur);
@@ -22,82 +18,66 @@ This is the CSS for the top nav bar that appears throughout the entire site
 	z-index: 2;
 }
 
-/*Keep navbar at top of viewport if it has the .sticky class*/
-#navbar.sticky {
+/*Keep top-nav at top of viewport if it has the .sticky class*/
+#top-nav.sticky {
 	position: sticky;
 	top: 0px;
 }
 
 /*=== BUTTONS === */
 /*Don't change the cursor if the button is already active*/
-li.active > div.nav-button {
+/* li.active > div.nav-button {
 	cursor: default;
-}
-
-#navbar * {
-	user-select: none;
-}
-
-#navbar a {
-	text-decoration: none;
 }
 
 .nav-button:not(.active) {
 	cursor: pointer;
 }
 
-div#navbar > ul.navbar-container {
+#top-nav * {
+	user-select: none;
+}
+
+#top-nav a {
+	text-decoration: none;
+} */
+
+
+#top-nav-container {
 	list-style-type: none;
 	margin: 0;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding: 0;
 	overflow: hidden;
 }
-div#navbar > ul > li.nav-right {
-	float: right;
-}
-div#navbar > ul > li.nav-left {
+#top-nav .nav-item {
 	float: left;
 }
-div#navbar > ul > li {
+
+#top-nav .nav-item {
 	background-color: rgba(0, 0, 0, 0);
-	transition: all 0.5s ease;
+	transition: background-color 0.5s ease;
 }
-
-div#navbar > ul > li.active {
-	background-color: rgba(0, 0, 0, 0.3);
-}
-div#navbar > ul > li:hover {
+#top-nav .nav-item:hover {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
 
-div.nav-button {
+#top-nav .nav-button {
 	line-height: var(--top-nav-height);
 	padding-left: 20px;
 	padding-right: 20px;
-	transition: all 0.5s ease;
 }
 
 
 /*The underline effect*/
 @media (any-hover: hover) {
-	.nav-button {
-		display: inline-block;
-		vertical-align: middle;
+	#top-nav .nav-button {
 		-webkit-transform: translateZ(0);
 		transform: translateZ(0);
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		-moz-osx-font-smoothing: grayscale;
-		position: relative;
-		overflow: hidden;
 	}
-	.nav-button:before {
+	#top-nav .nav-button:before {
 		content: "";
 		position: absolute;
-		z-index: -1;
 		left: 0;
 		right: 100%;
 		bottom: 0;
@@ -110,7 +90,8 @@ div.nav-button {
 		-webkit-transition-timing-function: ease-out;
 		transition-timing-function: ease-out;
 	}
-	.nav-button:hover:before, .nav-button:focus:before, .nav-button:active:before {
+	/*I know I can use :is() but its a bit weird on the support*/
+	#top-nav .nav-button:hover:before, #top-nav .nav-button:focus:before, #top-nav .nav-button:active:before {
 		right: 0;
 	}
 }
