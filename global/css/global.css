@@ -15,18 +15,19 @@ body {
     --top-nav-font: 'Bruno Ace SC', Helvetica, sans-serif;
     --top-nav-font-size: 15px;
     
-    --top-nav-height: 60px;
+    --top-nav-height: 60px;
+    
     
     /*Left nav*/
     --left-nav-font: 'Bruno Ace SC', Helvetica, sans-serif;
     --left-nav-font-size: 15px;
     
-	--left-nav-width: 100px;
+    --left-nav-width: 100px;
     --left-nav-margin-right: 20px;
     
     
     /*Content*/
-	--content-width: 700px;
+    --content-width: 700px;
     --content-margin: 20px;
     
     --content-border-radius: 10px;
@@ -100,7 +101,7 @@ body.dark-mode {
     --nav-text: #eeeeee;
     --footer-text: #ffffff;
     --title-text: #ffffff;
-
+    
     --content-blur: blur(10px);
     --top-nav-blur: blur(5px) brightness(110%);
 }
@@ -113,7 +114,7 @@ body:not(.dark-mode) {
     --nav-text: #d6d6d6;
     --footer-text: #d6d6d6;
     --title-text: #ffffff;
-
+    
     --content-blur: blur(10px);
     --top-nav-blur: blur(5px) brightness(90%);
 }
@@ -132,12 +133,12 @@ a {
 }
 
 body {
-	height: 100%;
+    height: 100%;
     width: auto !important;
     min-width: var(--min-width);
-	padding: 0;
-	margin: 0;
-	overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 

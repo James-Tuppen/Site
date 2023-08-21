@@ -2,7 +2,7 @@
 #top-nav {
 	font-family: var(--top-nav-font);
 	color: var(--nav-text);
-
+	
 	transition: top 0.3s !important;
 	position: sticky;
 	top: calc(var(--top-nav-height) * -1);
