@@ -144,7 +144,13 @@ body {
 
 
 /*=== DEBUGGING ===*/
+:root {
+    --debug-0: 1px solid red;
+    --debug-1: 1px solid green;
+    --debug-2: 1px solid blue;
+    --debug-opacity: 0.9;
+}
 /* * {
-    outline: 1px solid red;
-    opacity: 0.8;
-}*/
+    outline: var(--debug-0);
+    opacity: var(--debug-opacity);
+} */
