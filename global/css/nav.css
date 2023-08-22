@@ -4,12 +4,15 @@
 	color: var(--nav-text);
 	font-size: var(--top-nav-font-size);
 	
-	transition: top 0.3s;
 	position: sticky;
 	top: calc(var(--top-nav-height) * -1);
 	left: 0;
 	width: 100%;
 	z-index: 2;
+	transition: top 0.3s;
+	
+	-webkit-user-select: none;
+	user-select: none;
 	
 	background: var(--theme-transparent);
 	-webkit-backdrop-filter: var(--top-nav-blur);
@@ -21,7 +24,6 @@
 
 /*Keep top-nav at top of viewport if it has the .sticky class*/
 #top-nav.sticky {
-	position: sticky;
 	top: 0px;
 }
 
@@ -35,14 +37,9 @@
 	cursor: pointer;
 } */
 
-/* #top-nav * {
-	user-select: none;
-} */
-
-/* #top-nav a {
+#top-nav a {
 	text-decoration: none;
-} */
-
+}
 
 #top-nav-container {
 	list-style-type: none;
@@ -50,36 +47,34 @@
 	padding: 0;
 	overflow: hidden;
 }
-#top-nav .nav-item {
-	float: left;
-}
 
 #top-nav .nav-item {
+	float: left;
 	background-color: rgba(0, 0, 0, 0);
 	transition: background-color 0.5s ease;
 }
-#top-nav .nav-item:hover {
-	background-color: rgba(0, 0, 0, 0.3);
-}
-.nav-button {
-	padding-left: 20px;
-	padding-right: 20px;
-	width: 100%;
-	height: 100%;
-	display: inline-block;
+
+@media (any-hover: hover) {
+	#top-nav .nav-item:hover {
+		background-color: rgba(0, 0, 0, 0.3);	}
 }
 
 #top-nav .nav-button {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
 	line-height: var(--top-nav-height);
+	padding-left: 20px;
+	padding-right: 20px;
+	
+	/*This fixes the animation*/
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 
 /*The underline effect*/
 @media (any-hover: hover) {
-	#top-nav .nav-button {
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-	}
 	#top-nav .nav-button:before {
 		content: "";
 		position: absolute;
