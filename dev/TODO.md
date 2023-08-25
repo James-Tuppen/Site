@@ -14,3 +14,7 @@
 - Remember to bold important parts of the text
 - Shadows
 - Footer resizing
+
+- Make left nav bigger
+- That last sentence... ehh...
+- Is there a better font I could be using?

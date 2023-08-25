@@ -28,7 +28,6 @@ body
 /*Desktop view*/
 @media (min-width: 501px) {
     #left-nav-wrapper {
-        height: 100px;
         flex-basis: var(--left-nav-width);
     }
     #content-wrapper {

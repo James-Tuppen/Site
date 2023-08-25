@@ -29,9 +29,9 @@
 	cursor: default;
 } */
 
-/* .nav-button:not(.active) {
+#left-nav-container .nav-item:not(.active) {
 	cursor: pointer;
-} */
+}
 
 #left-nav-container {
 	list-style-type: none;
@@ -50,19 +50,22 @@
 	color: var(--left-nav-text);
 	width: 100%;
 	
-	transition: margin-left 0.4s, color 0.2s ease !important;
+	transition: margin-left 0.4s, color 0.4s ease;
+	transition-delay: 25ms;
 }
 
 #left-nav .nav-item + .nav-item {
 	margin-top: 6px;
 }
 
-#left-nav .nav-item:hover {
+#left-nav .nav-item.active {
 	color: var(--left-nav-text-active);
 	margin-left: var(--left-nav-pop);
 }
 
 @media (any-hover: hover) {
 	#left-nav .nav-item:hover {
+		color: var(--left-nav-text-active);
+		margin-left: var(--left-nav-pop);
 	}
 }

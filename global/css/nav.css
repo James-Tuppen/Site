@@ -17,9 +17,9 @@
 	background: var(--theme-transparent);
 	-webkit-backdrop-filter: var(--top-nav-blur);
 	backdrop-filter: var(--top-nav-blur);
-	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
+	-webkit-box-shadow: var(--box-shadow);
+	-moz-box-shadow: var(--box-shadow);
+	box-shadow: var(--box-shadow);
 }
 
 /*Keep top-nav at top of viewport if it has the .sticky class*/
@@ -28,15 +28,6 @@
 }
 
 /*=== BUTTONS === */
-/*Don't change the cursor if the button is already active*/
-/* li.active > div.nav-button {
-	cursor: default;
-} */
-
-/* .nav-button:not(.active) {
-	cursor: pointer;
-} */
-
 #top-nav a {
 	text-decoration: none;
 }
@@ -49,14 +40,16 @@
 }
 
 #top-nav .nav-item {
-	float: left;
+	float: left;
+
 	background-color: rgba(0, 0, 0, 0);
 	transition: background-color 0.5s ease;
 }
 
 @media (any-hover: hover) {
 	#top-nav .nav-item:hover {
-		background-color: rgba(0, 0, 0, 0.3);	}
+		background-color: rgba(0, 0, 0, 0.3);
+	}
 }
 
 #top-nav .nav-button {
@@ -77,18 +70,15 @@
 @media (any-hover: hover) {
 	#top-nav .nav-button:before {
 		content: "";
+
 		position: absolute;
+		height: 3px;
 		left: 0;
 		right: 100%;
 		bottom: 0;
+
 		background: #ECECEC;
-		height: 4px;
-		-webkit-transition-property: right;
-		transition-property: right;
-		-webkit-transition-duration: 0.15s;
-		transition-duration: 0.15s;
-		-webkit-transition-timing-function: ease-out;
-		transition-timing-function: ease-out;
+		transition: right 0.25s ease;
 	}
 	/*I know I can use :is() but its a bit weird on the support*/
 	#top-nav .nav-button:hover:before, #top-nav .nav-button:focus:before, #top-nav .nav-button:active:before {
