@@ -1,0 +1,68 @@
+/*=== MAIN ===*/
+
+#left-nav {
+	font-family: var(--left-nav-font);
+	font-size: var(--left-nav-font-size);
+	
+    width: var(--left-nav-width);
+    height: fit-content;
+    margin-top: var(--content-margin);
+    margin-right: var(--left-nav-margin-right);
+    /* margin-right: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2)); */
+	
+	-webkit-user-select: none;
+	user-select: none;
+	
+    background: var(--left-nav-background);
+    border-radius: 0 var(--content-border-radius) var(--content-border-radius) 0;
+    -webkit-backdrop-filter: var(--left-nav-blur);
+    backdrop-filter: var(--left-nav-blur);
+	-webkit-box-shadow: var(--box-shadow);
+	-moz-box-shadow: var(--box-shadow);
+	box-shadow: var(--box-shadow);
+}
+
+
+/*=== BUTTONS === */
+/*Don't change the cursor if the button is already active*/
+/* li.active > div.nav-button {
+	cursor: default;
+} */
+
+/* .nav-button:not(.active) {
+	cursor: pointer;
+} */
+
+#left-nav-container {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	
+	padding-left: 8px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+
+#left-nav .nav-item {
+	position: relative;
+	color: var(--left-nav-text);
+	width: 100%;
+	
+	transition: margin-left 0.4s, color 0.2s ease !important;
+}
+
+#left-nav .nav-item + .nav-item {
+	margin-top: 6px;
+}
+
+#left-nav .nav-item:hover {
+	color: var(--left-nav-text-active);
+	margin-left: var(--left-nav-pop);
+}
+
+@media (any-hover: hover) {
+	#left-nav .nav-item:hover {
+	}
+}

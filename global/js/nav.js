@@ -34,12 +34,15 @@
 // 	});
 // }
 
+function highlightNavButton() {}
+
 
 function addNavClickEvents() {
-	const navbarHeight = document.getElementById('navbar').offsetHeight;
-	document.querySelectorAll('.nav-scroll').forEach(function(navItem) {
+	const navbarHeight = document.getElementById('top-nav').offsetHeight;
+	document.querySelectorAll('#left-nav-container > .nav-item').forEach(function(navItem) {
 		navItem.onclick = (function() {
-			const element = document.querySelector(navItem.getAttribute('targetElement'));
+			const element = document.querySelector(navItem.getAttribute('target-element'));
+			console.log(navItem.getAttribute('target-element'));
 			const elementPosition = element.getBoundingClientRect().top + window.scrollY;
 			const offsetPosition = elementPosition - navbarHeight;
 			
