@@ -9,7 +9,6 @@
 - Highlight nav button by its target attribute
 - Sections sorted with .row, to keep vertical alignment neat
 - Sections on home link to other pages
-- Add that Python code I made?
 - Slide-in animations for dual sections
 - Remember to bold important parts of the text
 - Shadows
@@ -18,3 +17,6 @@
 - Make left nav bigger
 - That last sentence... ehh...
 - Is there a better font I could be using?
+- Proper light mode support?
+- Animate images (slide-in)
+- Add -webkit, -moz ect

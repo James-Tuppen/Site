@@ -21,9 +21,9 @@ body {
     
     /*Left nav*/
     --left-nav-font: 'Bruno Ace SC', Helvetica, sans-serif;
-    --left-nav-font-size: 11px;
+    --left-nav-font-size: 13px;
     
-    --left-nav-width: 130px;
+    --left-nav-width: 180px;
     --left-nav-margin-right: 20px;
     
     --left-nav-pop: 10px;
@@ -87,12 +87,12 @@ body {
         --dual-gap-y: 20px;
     }
     body.dark-mode {
-        --left-nav-background: rgba(0, 0, 0, 0.3);
-        --left-nav-blur: blur(5px);
+        --left-nav-background: rgba(0, 0, 0, 0.5);
+        --left-nav-blur: blur(10px);
     }
     body:not(.dark-mode) {
-        --left-nav-background: rgba(255, 255, 255, 0.3);
-        --left-nav-blur: blur(5px);
+        --left-nav-background: rgba(255, 255, 255, 0.5);
+        --left-nav-blur: blur(10px);
     }
 }
 
@@ -109,6 +109,10 @@ body.dark-mode {
     
     --content-blur: blur(10px);
     --top-nav-blur: blur(5px) brightness(110%);
+
+    #left-nav-toggle > img {
+        filter: invert(1);
+    }
 }
 
 /*-Light mode*/
