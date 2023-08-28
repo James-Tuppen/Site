@@ -51,6 +51,7 @@ body {
     
     /*Paragraph*/
     --paragraph-padding: 20px;
+    --paragraph-gap: 16px;
     
     
     /*Image*/
@@ -64,7 +65,7 @@ body {
 
 
 /*-Desktop layout*/
-@media (min-width: 501px) {
+@media (min-width: 601px) {
     body {
         --dual-display: flex;
         --dual-gap-x: 15px;
@@ -80,7 +81,7 @@ body {
     }
 }
 /*-Mobile layout*/
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     body {
         --dual-display: block;
         --dual-gap-x: 0;

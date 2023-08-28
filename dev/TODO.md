@@ -2,11 +2,12 @@
 
 ## Critical priority
 - Bold important parts of the text
-- Toggle with the three bar menu
+- Fix top nav resizing
 
 ## High priority
+- Font size resizing
+- Add titles to each paragraph element
 - Add -webkit, -moz ect
-- Sections sorted with .row, to keep vertical alignment neat
 - Animate images (slide-in)
 - Images from old Daymap script?
 
