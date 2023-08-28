@@ -7,7 +7,7 @@
 	position: sticky;
 	top: calc(var(--top-nav-height) * -1);
 	left: 0;
-	height: var(--top-nav-height);
+	height: fit-content;
 	width: 100%;
 	z-index: 2;
 	transition: top 0.3s;
@@ -40,9 +40,28 @@
 	overflow: hidden;
 }
 
-#top-nav .nav-item {
-	float: left;
+/*-Desktop layout*/
+@media (min-width: 601px) {
+	#hamburger {
+		display: none !important;
+	}
+	#top-nav .nav-item {
+		float: left;
+	}
+}
 
+/*-Mobile layout*/
+@media (max-width: 600px) {
+	#top-nav .nav-item {
+		float: none;
+		text-align: center;
+	}
+	#top-nav-container:not(.show) .nav-item:not(:first-child) {
+		display: none;
+	}
+}
+
+#top-nav .nav-item {
 	background-color: rgba(0, 0, 0, 0);
 	transition: background-color 0.5s ease;
 }

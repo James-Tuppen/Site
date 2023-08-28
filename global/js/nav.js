@@ -68,7 +68,7 @@ function addNavClickEvents() {
 
     //Top nav
     document.querySelectorAll('#top-nav-container > .nav-item').forEach(function (navItem) {
-        if (navItem.childNodes[0].tagName != 'A') {
+        if (navItem.childNodes[0].tagName != 'A' && navItem.childNodes[0].id != 'hamburger') {
             navItem.onclick = (function () {
                 isScrollTo = true;
                 smoothScroll(0).then(() => {
@@ -100,10 +100,15 @@ function addNavClickEvents() {
     })
 }
 
+//HAMBURGER :D
 function addLeftNavToggle() {
-    document.querySelector('#left-nav-toggle').onclick = (function () {
-        console.log('toggle');
-        document.querySelector('#left-nav').classList.toggle('active');
+    document.getElementById('left-nav-toggle').onclick = (function () {
+        document.getElementById('top-nav-container').classList.remove('show')
+        document.getElementById('left-nav').classList.toggle('active');
+    })
+    document.getElementById('hamburger').onclick = (function () {
+        document.getElementById('left-nav').classList.remove('active');
+        document.getElementById('top-nav-container').classList.toggle('show')
     })
 }
 
