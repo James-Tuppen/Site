@@ -11,7 +11,8 @@ body
 */
 
 /*=== DEBUG ===*/
-#debug {
+/*A cool lil debug line to show spacing*/
+/* #debug {
     z-index: 99999999999999;
     position: absolute;
     top: 60px;
@@ -20,7 +21,7 @@ body
     
     left: var(--left-nav-width);
     width: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2));
-}
+} */
 
 
 .content-item {

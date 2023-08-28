@@ -2,7 +2,6 @@
 
 ## Critical priority
 - Bold important parts of the text
-- Fix top nav resizing
 
 ## High priority
 - Font size resizing
