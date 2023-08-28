@@ -25,20 +25,37 @@ function calcNavButtonPosition(docPos) {
 
 
 
+//I COULD HAVE JUST USED :root {scroll-behavior: smooth;} ARGHHHHH WHYYYY
+function smoothScroll(y) {
+  window.scrollTo({top: y, behavior: 'smooth'});
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+    }, 400);//I know this isn't great, but It's super stable and I've honestly had three hours sleep for the last four days.
+  })
+}
+
+
 //-Highlight the nav button that links to the place that the user is scolled to
 function highlightNavButton() {
 	let scrollPosition = window.scrollY;
 	
-	let sectionsScrolled = 0;
+	let sectionsScrolled = 1;
 	document.querySelectorAll('.section').forEach(function(section, i) {
 		let topOffset = section.offsetTop;
 		if ((topOffset - scrollPosition - detectionBufferZone) < 0) {
 			sectionsScrolled = i;
+			//I'll leave to your imagination on why querySelectorAll isn't getting elements that are offscreen on webkit
 		}
 	});
 	
 	if (document.querySelector('.nav-item.active')) {
 		document.querySelector('.nav-item.active').classList.remove('active');
+	}
+	
+	if (sectionsScrolled == 0) {
+		sectionsScrolled = 1;
 	}
 	
 	document.querySelectorAll('#left-nav-container > .nav-item')[sectionsScrolled-1].classList.add('active');
@@ -52,10 +69,11 @@ function addNavClickEvents() {
 	document.querySelectorAll('#top-nav-container > .nav-item').forEach(function(navItem) {
 		if (navItem.childNodes[0].tagName != 'A') {
 			navItem.onclick = (function() {
-				isScrollTo = true;
-				window.scrollTo({
-					top: 0, behavior: 'smooth'
-				});
+    		isScrollTo = true;
+        smoothScroll(0).then(() => {
+          isScrollTo = false;
+          highlightNavButton();
+        });
 			})
 		}
 	})
@@ -71,12 +89,12 @@ function addNavClickEvents() {
 				document.querySelector('.nav-item.active').classList.remove('active');
 			}
 			e.target.parentNode.classList.add('active');
-
-			isScrollTo = true;
-			window.scrollTo({
-				top: offsetPosition - scrollBufferZone, behavior: 'smooth'
-			})
-			
+      
+  		isScrollTo = true;
+      smoothScroll(offsetPosition - scrollBufferZone).then(() => {
+        isScrollTo = false;
+        highlightNavButton();
+      });
 		})
 	})
 }
@@ -102,9 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		//navBarAppear();
 	});
+	//DOESN'T WORK ON WEBKIT ARGHHH WHYYYY
+  //Note: I added the smoothScroll function but kept this in as a backup
 	window.addEventListener('scrollend', function(e) {
 		isScrollTo = false;
-		highlightNavButton();
+    highlightNavButton();
 	});
 
 	//Call once for when the page is loaded
