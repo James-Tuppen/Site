@@ -1,28 +1,34 @@
 footer {
+	width: 100%;
+	padding-top: 6px;
+	display: block;
+	
 	font-family: var(--footer-font);
 	font-size: var(--footer-font-size);
-
-	padding-top: 6px;
-	padding-bottom: 6px;
-	width: 100%;
-	display: block;
-	background-color: var(--theme);
+	
+	background-color: var(--theme-transparent);
+	-webkit-backdrop-filter: var(--top-nav-blur);
+	backdrop-filter: var(--top-nav-blur);
 }
+
 .footer-contact {
 	width: 100%;
-	height: 35px;
+	height: fit-content; /*35px*/
 	padding-left: 30px;
-	line-height: 40px;
+	line-height: 35px;
+	
+	color: var(--footer-text);
 	background-color: rgba(51, 51, 51, 0.1);
-	color: var(--secondaryText);
 }
+
 .footer-info {
 	width: 80%;
-	max-width: 640px;
 	min-width: 80px;
-	border-left: 3px solid #ffffff;
+	max-width: 640px;
 	padding-left: 10px;
 	margin-left: 30px;
-	text-indent: 20px;
-	color: var(--secondaryText);
+	text-indent: 10px;
+	
+	color: var(--footer-text);
+	border-left: 3px solid #ffffff;
 }

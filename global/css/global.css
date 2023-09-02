@@ -1,34 +1,134 @@
 /*=== VARIABLES ===*/
 body {
+    /*-MAIN*/
     --font: 'Rajdhani', Helvetica, sans-serif;
-    --font-size: 18px;
-
-    --navbar-font: 'Bruno Ace SC', Helvetica, sans-serif;
-    --navbar-font-size: 15px;
-
-    --footer-font: 'Roboto', Helvetica, sans-serif;
-    --footer-font-size: 15px;
+    --font-size: 16px;
+    
+    --min-width: 0px;
     
     --theme: #32ade6;
-    --themeTransparent: rgba(60, 193, 255, 0.8);
-
-    --min-width: 600px;
+    --theme-transparent: rgba(60, 193, 255, 0.8);
+    --box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
+    
+    
+    /*-ELEMENTS*/
+    /*Top nav*/
+    --top-nav-font: 'Bruno Ace SC', Helvetica, sans-serif;
+    --top-nav-font-size: 15px;
+    
+    --top-nav-height: 60px;
+    
+    
+    /*Left nav*/
+    --left-nav-font: 'Bruno Ace SC', Helvetica, sans-serif;
+    --left-nav-font-size: 13px;
+    
+    --left-nav-width: 180px;
+    --left-nav-margin-right: 20px;
+    
+    --left-nav-pop: 10px;
+    
+    
+    /*Content*/
+    --content-width: 700px;
+    --content-margin: 20px;
+    
+    --content-border-radius: 10px;
+    
+    
+    /*Title / banner*/
+    --title-font: 'Bruno Ace SC', Helvetica, sans-serif;
+    --title-font-size: 20px;
+    
+    --banner-height: 50px;
+    
+    --banner-mask: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0.8) 75%, rgba(255,255,255,1) 100%);
+    
+    
+    /*Dual*/
+    --dual-padding: 15px;
+    
+    
+    /*Paragraph*/
+    --paragraph-padding: 20px;
+    --paragraph-gap: 16px;
+    
+    
+    /*Image*/
+    --image-border-radius: 6px;
+    
+    
+    /*Footer*/
+    --footer-font: 'Roboto', Helvetica, sans-serif;
+    --footer-font-size: 15px;
 }
 
-/*Dark mode*/
+
+/*-Desktop layout*/
+@media (min-width: 601px) {
+    body {
+        --dual-display: flex;
+        --dual-gap-x: 15px;
+        --dual-gap-y: 0;
+    }
+    body.dark-mode {
+        --left-nav-background: rgba(0, 0, 0, 0.6); /*Same as content-background*/
+        --left-nav-blur: blur(10px); /*Same as content-blur*/
+    }
+    body:not(.dark-mode) {
+        --left-nav-background: rgba(255, 255, 255, 0.6);  /*Same as content-background*/
+        --left-nav-blur: blur(10px); /*Same as content-blur*/
+    }
+}
+/*-Mobile layout*/
+@media (max-width: 600px) {
+    body {
+        --dual-display: block;
+        --dual-gap-x: 0;
+        --dual-gap-y: 20px;
+    }
+    body.dark-mode {
+        --left-nav-background: rgba(0, 0, 0, 0.5);
+        --left-nav-blur: blur(10px);
+    }
+    body:not(.dark-mode) {
+        --left-nav-background: rgba(255, 255, 255, 0.5);
+        --left-nav-blur: blur(10px);
+    }
+}
+
+/*-Dark mode*/
 body.dark-mode {
-    --background: #181A1B;
-    --text: #b3b3b3;
-    --secondaryText: #fcfcfc;
-    --themeBlur: blur(5px) brightness(110%);
+    --background: #181A1B; /*Fallback*/
+    --content-background: rgba(0, 0, 0, 0.6);
+    --text: #dadada;
+    --nav-text: #eeeeee;
+    --left-nav-text: #cccccc;
+    --left-nav-text-active: #f0f0f0;
+    --footer-text: #ffffff;
+    --title-text: #ffffff;
+    
+    --content-blur: blur(10px);
+    --top-nav-blur: blur(5px) brightness(110%);
+
+    #left-nav-toggle > img {
+        filter: invert(1);
+    }
 }
 
-/*Light mode*/
+/*-Light mode*/
 body:not(.dark-mode) {
-    --background: #f0f0f0;
+    --background: #f0f0f0; /*Fallback*/
+    --content-background: rgba(255, 255, 255, 0.8);
     --text: #202124;
-    --themeBlur: blur(5px) brightness(90%);
+    --nav-text: #d6d6d6;
+    --footer-text: #d6d6d6;
+    --title-text: #ffffff;
+    
+    --content-blur: blur(10px);
+    --top-nav-blur: blur(5px) brightness(90%);
 }
+
 
 
 /*=== CONSISTENCY ===*/
@@ -43,26 +143,24 @@ a {
 }
 
 body {
-	padding: 0;
-	margin: 0;
-	height: 100%;
-	overflow-x: hidden;
-    min-width: var(--min-width);
+    height: 100%;
     width: auto !important;
+    min-width: var(--min-width);
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
-
-/*=== MAIN ===*/
-body {
-    color: var(--text);
-	font-family: var(--font);
-    font-size: var(--font-size);
-	background-color: var(--background);
-}
 
 
 /*=== DEBUGGING ===*/
+:root {
+    --debug-0: 1px solid red;
+    --debug-1: 1px solid green;
+    --debug-2: 1px solid blue;
+    --debug-opacity: 0.9;
+}
 /* * {
-    outline: 1px solid red;
-    opacity: 0.8;
-}*/
+    outline: var(--debug-0);
+    opacity: var(--debug-opacity);
+} */

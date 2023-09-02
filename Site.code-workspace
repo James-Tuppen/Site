@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
+		"svg.preview.background": "dark-transparent"
 		"hidefiles.configurationType": "global",
 		"files.exclude": {
 			"**/.git": true,

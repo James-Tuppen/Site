@@ -1,114 +1,107 @@
-/*
-This is the CSS for the top nav bar that appears throughout the entire site
-*/
-
 /*=== MAIN ===*/
-.navbar {
-	font-family: var(--navbar-font);
-	color: var(--secondaryText);
-
-	transition: top 0.3s !important;
+#top-nav {
+	font-family: var(--top-nav-font);
+	color: var(--nav-text);
+	font-size: var(--top-nav-font-size);
+	
 	position: sticky;
-	top: -60px;
+	top: calc(var(--top-nav-height) * -1);
 	left: 0;
+	height: fit-content;
 	width: 100%;
-	font-size: var(--navbar-font-size);
-	background: var(--themeTransparent);
-	-webkit-backdrop-filter: var(--themeBlur);
-	backdrop-filter: var(--themeBlur);
-	-webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-	z-index: 999;
+	z-index: 2;
+	transition: top 0.3s;
+	
+	-webkit-user-select: none;
+	user-select: none;
+	
+	background: var(--theme-transparent);
+	-webkit-backdrop-filter: var(--top-nav-blur);
+	backdrop-filter: var(--top-nav-blur);
+	-webkit-box-shadow: var(--box-shadow);
+	-moz-box-shadow: var(--box-shadow);
+	box-shadow: var(--box-shadow);
 }
 
-/*Keep navbar at top of viewport if it has the .sticky class*/
-.navbar.sticky {
-	position: sticky;
+/*Keep top-nav at top of viewport if it has the .sticky class*/
+#top-nav.sticky {
 	top: 0px;
 }
 
 /*=== BUTTONS === */
-/*Don't change the cursor if the button is already active*/
-li.active > div.nav-button {
-	cursor: default;
-}
-
-.navbar * {
-	user-select: none;
-}
-
-.navbar a {
+#top-nav a {
 	text-decoration: none;
 }
 
-.nav-button:not(.active) {
-	cursor: pointer;
-}
-
-div.navbar > ul.navbar-container {
+#top-nav-container {
 	list-style-type: none;
 	margin: 0;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding: 0;
 	overflow: hidden;
 }
-div.navbar > ul > li.nav-right {
-	float: right;
+
+/*-Desktop layout*/
+@media (min-width: 601px) {
+	#hamburger {
+		display: none !important;
+	}
+	#top-nav .nav-item {
+		float: left;
+	}
 }
-div.navbar > ul > li.nav-left {
-	float: left;
+
+/*-Mobile layout*/
+@media (max-width: 600px) {
+	#top-nav .nav-item {
+		float: none;
+		text-align: center;
+	}
+	#top-nav-container:not(.show) .nav-item:not(:first-child) {
+		display: none;
+	}
 }
-div.navbar > ul > li {
+
+#top-nav .nav-item {
 	background-color: rgba(0, 0, 0, 0);
-	transition: all 0.5s ease;
+	transition: background-color 0.5s ease;
 }
 
-div.navbar > ul > li.active {
-	background-color: rgba(0, 0, 0, 0.3);
-}
-div.navbar > ul > li:hover {
-	background-color: rgba(0, 0, 0, 0.3);
+@media (any-hover: hover) {
+	#top-nav .nav-item:hover {
+		background-color: rgba(0, 0, 0, 0.3);
+	}
 }
 
-
-div.nav-button {
-	line-height: 60px;
+#top-nav .nav-button {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	line-height: var(--top-nav-height);
 	padding-left: 20px;
 	padding-right: 20px;
-	transition: all 0.5s ease;
+	
+	/*This fixes the animation*/
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 
 /*The underline effect*/
-.nav-button {
-	display: inline-block;
-	vertical-align: middle;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-	position: relative;
-	overflow: hidden;
-}
-.nav-button:before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	left: 0;
-	right: 100%;
-	bottom: 0;
-	background: #ECECEC;
-	height: 4px;
-	-webkit-transition-property: right;
-	transition-property: right;
-	-webkit-transition-duration: 0.15s;
-	transition-duration: 0.15s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-.nav-button:hover:before, .nav-button:focus:before, .nav-button:active:before {
-	right: 0;
+@media (any-hover: hover) {
+	#top-nav .nav-button:before {
+		content: "";
+
+		position: absolute;
+		height: 3px;
+		left: 0;
+		right: 100%;
+		bottom: 0;
+
+		background: #ECECEC;
+		transition: right 0.25s ease;
+	}
+	/*I know I can use :is() but its a bit weird on the support*/
+	#top-nav .nav-button:hover:before, #top-nav .nav-button:focus:before, #top-nav .nav-button:active:before {
+		right: 0;
+	}
 }

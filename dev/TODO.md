@@ -1,16 +1,22 @@
 # TODO
 
-- Fonts
-- More variables
-- Tables
-- ZWS
-- Not rely on the section class
-- Make the entire nav button of the left nav buttons able to open the related page, not just the text part
-- Image fitting in resizing (CSS ARGHHHHH)
-- Secondary text color for light mode, along with a bunch of other things to make it supported better (it's hard to make light mode look good yikes)
-- Highlight nav button by its target attribute
-- Sections sorted with .row, to keep vertical alignment neat
+## Critical priority
+- Bold important parts of the text
+
+## High priority
+- Font size resizing
+- Add titles to each paragraph element
+- Add -webkit, -moz ect
+- Animate images (slide-in)
+- Images from old Daymap script?
+
+## Medium priority
+- Shadows
 - Sections on home link to other pages
-- Add that Python code I made?
-- Make dual sections resizable with calc()
-- Slide-in animations for dual sections
+- Proper light mode support?
+- Fonts
+- ZWS?
+
+## Low priority
+- Not rely on the section class (Highlight nav button by its target attribute)
+- Tables

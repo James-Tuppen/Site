@@ -5,3 +5,5 @@
 ## Identity theft, personal info, passwords
 
 ## VPNs and proxies
+
+## Scams

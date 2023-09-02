@@ -1,90 +1,253 @@
-/*-Center column text*/
-.column {
-	width: 60%;
-	max-width: 720px;
-	margin: 0 auto;
+/*
+body
+
+#content
+
+#title-area - done
+.paragraph - done
+.image - done
+.dual-section - done, but untested with images
+.image-break - done
+*/
+
+/*=== DEBUG ===*/
+/*A cool lil debug line to show spacing*/
+/* #debug {
+    z-index: 99999999999999;
+    position: absolute;
+    top: 60px;
+    background: rgba(255, 0, 0, 0.8);
+    height: 5px;
+    
+    left: var(--left-nav-width);
+    width: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2));
+} */
+
+
+.content-item {
+    height: fit-content;
+    width: 100%;
+    margin-bottom: var(--content-margin);
 }
 
-/*-Dual content*/
-/*I wrote this to allow putting elements in a split formation, but I don't think I did the resizing very well*/
-.dual-section {
-	width: 100%;
-	height: fit-content;
-	padding-bottom: 30px;
-	padding-top: 30px;
 
-	padding-left: 15%; /** Fix this*/
-	padding-right: 15%;
+/*=== MOBILE VIEW CHANGES ===*/
+/*Desktop view*/
+@media (min-width: 601px) {
+    #left-nav-wrapper {
+        flex-basis: var(--left-nav-width);
+    }
+    #content-wrapper {
+        flex-grow: 1;
+    }
+}
+
+/*Mobile view*/
+@media (max-width: 600px) {
+    #left-nav-wrapper {
+        height: 0;
+        width: 0;
+        z-index: 1;
+    }
+    #content-wrapper {
+        width: 100%;
+    }
+}
+
+
+
+/*=== MAIN ===*/
+body {
+    font-size: var(--font-size);
+    font-family: var(--font);
+    color: var(--text);
+    
+    background-color: var(--background);
+    background-image: url("../image/1186090.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main-wrapper {
+    display: flex;
+}
+
+#left-nav-wrapper {
+    position: sticky;
+    align-self: flex-start;
+    top: var(--top-nav-height);
+}
+
+
+
+/*=== CONTENT ===*/
+#content {
+    /*This singular line caused me 14 hours of troubleshooting. Directly conflicts with flexbox*/
+    /*width: min(var(--content-width), 100%);*/
+    max-width: var(--content-width);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--content-margin);
+    margin-bottom: var(--content-margin);
+    
+    background: var(--content-background);
+    border-radius: var(--content-border-radius);
+    -webkit-backdrop-filter: var(--content-blur);
+    backdrop-filter: var(--content-blur);
+}
+
+
+
+/*=== TITLE AREA ===*/
+#title-area {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+#title {
+    width: 100%;
+    height: fit-content;
+    
+    padding-left: 25px;
+    
+    line-height: var(--banner-height);
+    font-family: var(--title-font);
+    font-size: var(--title-font-size);
+    color: var(--title-text);
+}
+#banner {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    position: absolute;
+    top: 0;
+    
+    background-image: url(../image/231311.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    -webkit-mask: var(--banner-mask);
+    mask: var(--banner-mask);
+    
+    border-radius: var(--content-border-radius) var(--content-border-radius) 0 0;
+}
+
+
+
+/*=== PARAGRAPH ===*/
+.paragraph {
+    padding-left: var(--paragraph-padding);
+    padding-right: var(--paragraph-padding);
+}
+.paragraph p {
+    margin: 0;
+}
+.paragraph p + p {
+    margin-top: var(--paragraph-gap);
+}
+
+
+
+/*=== IMAGE ===*/
+.image {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: fit;
+    
+    border-radius: var(--image-border-radius);
+}
+
+
+
+/*=== DUAL CONTENT ===*/
+
+.dual-section {
+    width: 100%;
+    height: fit-content;
+    display: var(--dual-display);
+    padding-left: var(--dual-padding);
+    padding-right: var(--dual-padding);
 }
 /*Clearfix lol*/
 .dual-section::after {
-	content: "";
-	clear: both;
-	display: table;
+    content: "";
+    clear: both;
+    display: table;
 }
-.left-dual-section {
-	width: 44%;
-	margin-left: 4%;
-	margin-right: 4%;
-	float: left;
-	
-	height: fit-content;
+.dual-section > div {
+    height: fit-content;
 }
-.right-dual-section {
-	width: 44%;
-	margin-right: 4%;
-	float: right;
-	
-	height: fit-content;
+.dual-section > div:last-child {
+    margin-left: var(--dual-gap-x);
+    margin-top: var(--dual-gap-y);
 }
 
-/*Resizing is hella broke, welcome to responsive design ig*/
+
+
 .left-dual-section img {
-	/*width: 100%;*/
+    /*width: 100%;*/
     
-	border-radius: 4% 0 0 4%;
-	--mask: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9004528985507246) 70%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.6) 92%, rgba(0,0,0,0) 100%);
-	-webkit-mask: var(--mask);
-	mask: var(--mask);
+    border-radius: 4% 0 0 4%;
+    --mask: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.6) 92%, rgba(0,0,0,0) 100%);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 }
 
 .right-dual-section img {
-	/*width: 100%;*/
+    /*width: 100%;*/
     
-	border-radius: 0 4% 4% 0;
-	--mask: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9004528985507246) 70%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.6) 92%, rgba(0,0,0,0) 100%);
-	-webkit-mask: var(--mask);
-	mask: var(--mask);
+    border-radius: 0 4% 4% 0;
+    --mask: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 70%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.6) 92%, rgba(0,0,0,0) 100%);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
 }
 
-/*-Parallax images*/
+
+
+/*=== IMAGE BREAK ===*/
 /*The parallax scrolling effect. Not too sure about its compatibility though*/
-.parallax-image {
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+.image-break {
+    min-height: 100px;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.row {
-	width: 85%;
-	margin-left: 15%;
-	margin-right: 15%;
-	padding-top: 15px;
-	padding-bottom: 15px;
+
+
+/*=== THIRD ROW ===*/
+/* .row {
+    width: 85%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .row > .third-column {
-	width: 30%;
-	height: 100%;
-	box-sizing: border-box;
-	float: left;
-	padding-left: 3.2%;
-	padding-right: 3.2%;
-}
+    width: 30%;
+    height: 100%;
+    box-sizing: border-box;
+    float: left;
+    padding-left: 3.2%;
+    padding-right: 3.2%;
+} */
 
 /*More clearfix*/
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
