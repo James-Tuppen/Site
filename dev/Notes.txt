@@ -30,3 +30,19 @@ On sites on the internet, words will be bold when the writer wishes to make them
 Command: Add bold to key phrases or sentences.
 DO NOT CHANGE ANY OF THE TEXT UNLESS IT IS TO BOLD IT
 The input text begins on the next line:
+
+
+I will give some input MD text, to be converted to HTML. For each ###header in the input MD text, substitute the items in [square brackets] on the line below and send one line. PLease send the result back to me.
+<li class="nav-item"><div class="nav-button" target-element="#header name id, in the format foo-bar-baz">Header title</div></li>
+
+For example, `### Malware usually stays hidden` becomes `<li class="nav-item"><div class="nav-button" target-element="#malware-usually-stays-hidden">Malware usually stays hidden</div></li>`
+
+The input text begins on the next line:
+
+
+I will give some input MD text, to be converted to HTML li items. For each `- header` in the input MD text, substitute the items in [square brackets] on the line below and delete the brackets.Please send the result back to me.
+<li class="nav-item"><div class="nav-button" target-element="#header name id, in the format foo-bar-baz">Header title</div></li>
+
+For example, `- Malware usually stays hidden` becomes `<li class="nav-item"><div class="nav-button" target-element="#malware-usually-stays-hidden">Malware usually stays hidden</div></li>`
+
+The input text begins on the next line:
