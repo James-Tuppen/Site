@@ -6,4 +6,6 @@
 
 ## VPNs and proxies
 
-## Scams
+- Exploits
+- Bots
+- Zero trust system

@@ -10,4 +10,4 @@ Secondly, I love programing and I could do with learning more about how HTML, Ja
 
 And finally, I made this website to enter the Premier"s coding challenge. However, I just want to note that I am entering this competition not for any prize or recognition, but because I want to "engage with tech experts to develop their talent and awareness of future pathways." Sure, a prize would be cool but what really matters to me is the programming itself. I would like to work in software development, (I could improve Daymap lol) or work at the <a target="_blank" rel="noopener" href="https://www.asd.gov.au">ASD</a>. It would be incredible to get to talk to experienced people about my career and possibly even see what it is like to work at some of these jobs.
 
-Turthfully, this has been one of the most stressful projects I have even done, in part due to the many other assignments that were due at the same time.
+Turthfully, this has been one of the most stressful projects I have even done, in part due to the many other assignments that were due at the same time. But I'm happy I learned so much.
