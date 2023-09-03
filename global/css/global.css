@@ -100,7 +100,7 @@ body {
 /*-Dark mode*/
 body.dark-mode {
     --background: #181A1B; /*Fallback*/
-    --content-background: rgba(0, 0, 0, 0.8);
+    --content-background: rgba(0, 0, 0, 0.6);
     --text: #dadada;
     --nav-text: #eeeeee;
     --left-nav-text: #cccccc;

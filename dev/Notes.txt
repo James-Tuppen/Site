@@ -11,3 +11,22 @@ Links to HTML <a>
 DO NOT CHANGE ANY OTHER TEXT
 
 The MD text begins on the next line:
+
+
+
+I will give an input of MD text, to be converted to HTML. Format:
+Paragraphs to <p>
+-list item converted to <h3>. Give every <h3> an appropriate id, for example: <h3>Home page</h3> becomes <h3 id="home-page">Home page</h3>
+Links to HTML <a>
+Italics to HTML Italics
+
+DO NOT CHANGE ANY OTHER TEXT
+
+The MD text begins on the next line:
+
+
+
+On sites on the internet, words will be bold when the writer wishes to make them more important. I need this done to some text, for a site. I'm not talking about the dot points after each "-", I mean the words in each paragraph that should have more meaning should bold. Don't go too crazy on it though, just a little bolding.
+Command: Add bold to key phrases or sentences.
+DO NOT CHANGE ANY OF THE TEXT UNLESS IT IS TO BOLD IT
+The input text begins on the next line:

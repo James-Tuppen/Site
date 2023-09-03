@@ -67,7 +67,6 @@ body {
     color: var(--text);
     
     background-color: var(--background);
-    background-image: url("../image/1186090.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -130,7 +129,7 @@ body {
     position: absolute;
     top: 0;
     
-    background-image: url(../image/231311.jpg);
+    background-image: url("../image/banner.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
