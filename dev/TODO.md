@@ -2,8 +2,10 @@
 
 ## Critical priority
 - Bold important parts of the text
+- Last updated in footer
 
 ## High priority
+- Add more code comments
 - Font size resizing
 - Add titles to each paragraph element
 - Add -webkit, -moz ect
@@ -15,8 +17,6 @@
 - Sections on home link to other pages
 - Proper light mode support?
 - Fonts
-- ZWS?
 
 ## Low priority
 - Not rely on the section class (Highlight nav button by its target attribute)
-- Tables

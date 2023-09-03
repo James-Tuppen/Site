@@ -1,7 +1,3 @@
 I hope to standardise this layout, (follow other common layouts). MDN docs is a perfect example of site structuring. Pages should cover how the reader can protect themselves from these threats. Use sources and quotes.
 
 `z-index: 0` on the navbar could be turned into a pretty epic effect.
-
-What I learned:
-- Get the base functionality down first
-- Don't code in bare CSS and HTML
