@@ -33,7 +33,7 @@ function smoothScroll(y) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve();
-        }, 400);//I know this isn't great, but It's super stable and I've honestly had three hours sleep for the last four days.
+        }, 800);//I know this isn't great, but It's super stable and I've honestly had three hours sleep for the last four days.
     })
 }
 
@@ -45,7 +45,7 @@ function highlightNavButton() {
     let sectionsScrolled = 1;
     document.querySelectorAll('.section').forEach(function (section, i) {
         let topOffset = section.offsetTop;
-        if ((topOffset - scrollPosition - detectionBufferZone) < 0) {
+        if ((topOffset - scrollPosition - obj.detectionBufferZone) < 0) {
             sectionsScrolled = i;
             //I'll leave to your imagination on why querySelectorAll isn't getting elements that are offscreen on webkit
         }
@@ -55,11 +55,7 @@ function highlightNavButton() {
         document.querySelector('.nav-item.active').classList.remove('active');
     }
 
-    if (sectionsScrolled == 0) {
-        sectionsScrolled = 1;
-    }
-
-    document.querySelectorAll('#left-nav-container > .nav-item')[sectionsScrolled - 1].classList.add('active');
+    document.querySelectorAll('#left-nav-container > .nav-item')[sectionsScrolled].classList.add('active');
 }
 
 //-Make the nav buttons do things, basically
@@ -112,8 +108,17 @@ function addLeftNavToggle() {
     })
 }
 
+const obj = {
+    get detectionBufferZone() {
+        const bufferZone = minBufferZone + (maxBufferZone - minBufferZone) * (document.documentElement.scrollHeight - (window.scrollY + window.innerHeight)) / document.documentElement.scrollHeight; //MORE STASTISFYING MATHS :D
+        //console.log(bufferZone);
+        return bufferZone;
+    }
+};
+
 //-Config
-const detectionBufferZone = window.innerHeight / 6;
+const maxBufferZone = window.innerHeight / 10;
+const minBufferZone = window.innerHeight / 1.4;
 const scrollBufferZone = window.innerHeight / 40;
 
 //-Variables
@@ -140,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //Note: I added the smoothScroll function but kept this in as a backup
     window.addEventListener('scrollend', function (e) {
         isScrollTo = false;
-        highlightNavButton();
     });
 
     //Call once for when the page is loaded
