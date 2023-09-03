@@ -2,7 +2,6 @@
 
 ## Critical priority
 - Bold important parts of the text
-- Last updated in footer
 
 ## High priority
 - Add more code comments

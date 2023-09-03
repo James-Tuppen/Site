@@ -1,3 +1,13 @@
 I hope to standardise this layout, (follow other common layouts). MDN docs is a perfect example of site structuring. Pages should cover how the reader can protect themselves from these threats. Use sources and quotes.
 
 `z-index: 0` on the navbar could be turned into a pretty epic effect.
+
+I will give an input of MD text, to be converted to HTML. Format:
+Paragraphs to <p>
+###headers converted to <h3>. Give every <h3> an appropriate id, for example: <h3>Home page</h3> becomes <h3 id="home-page">Home page</h3>
+- List item converted to html list
+Links to HTML <a>
+
+DO NOT CHANGE ANY OTHER TEXT
+
+The MD text begins on the next line:

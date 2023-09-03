@@ -65,7 +65,7 @@ body {
 
 
 /*-Desktop layout*/
-@media (min-width: 601px) {
+@media (min-width: 701px) {
     body {
         --dual-display: flex;
         --dual-gap-x: 15px;
@@ -81,7 +81,7 @@ body {
     }
 }
 /*-Mobile layout*/
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     body {
         --dual-display: block;
         --dual-gap-x: 0;

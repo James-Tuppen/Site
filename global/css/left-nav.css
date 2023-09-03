@@ -1,13 +1,13 @@
 /*=== MAIN ===*/
 
 /*Desktop view*/
-@media (min-width: 601px) {
+@media (min-width: 701px) {
     #left-nav-toggle {
         display: none;
     }
 }
 /*Mobile view*/
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     #left-nav {
         position: relative;
         left: 0;

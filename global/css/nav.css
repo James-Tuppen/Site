@@ -41,7 +41,7 @@
 }
 
 /*-Desktop layout*/
-@media (min-width: 601px) {
+@media (min-width: 701px) {
 	#hamburger {
 		display: none !important;
 	}
@@ -51,7 +51,7 @@
 }
 
 /*-Mobile layout*/
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 	#top-nav .nav-item {
 		float: none;
 		text-align: center;
