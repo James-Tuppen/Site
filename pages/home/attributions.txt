@@ -1,1 +1,3 @@
 "./images/laptop-warning.png": BitDefender (https://www.bitdefender.com)
+"./images/placeholderbackground.jpg": AlphaCoders (https://wall.alphacoders.com/big.php?i=1046781)
+"./images/matrix.jpg": iStockPhoto (https://www.istockphoto.com/photo/cyberspace-with-digital-falling-lines-binary-hanging-chain-gm521533758-91389197)
