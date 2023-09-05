@@ -118,12 +118,12 @@ body.dark-mode {
 
 /*-Light mode*/
 body:not(.dark-mode) {
-    --background: #f0f0f0; /*Fallback*/
+    --background: #f0f0f0; /*Fallback in case the image doesn't load*/
     --content-background: rgba(255, 255, 255, 0.7);
     --text: #202124;
     --nav-text: #d6d6d6;
     --footer-text: #d6d6d6;
-    --title-text: #ffffff;
+    --title-text: #202124;
     
     --content-blur: blur(10px);
     --top-nav-blur: blur(5px) brightness(90%);
