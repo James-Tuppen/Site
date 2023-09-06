@@ -1,15 +1,3 @@
-/*
-body
-
-#content
-
-#title-area - done
-.paragraph - done
-.image - done
-.dual-section - done, but untested with images
-.image-break - done
-*/
-
 /*=== DEBUG ===*/
 /*A cool lil debug line to show spacing*/
 /* #debug {
@@ -22,6 +10,7 @@ body
     left: var(--left-nav-width);
     width: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2));
 } */
+
 
 
 .content-item {
@@ -95,6 +84,7 @@ body {
     margin-right: auto;
     margin-top: var(--content-margin);
     margin-bottom: var(--content-margin);
+    padding-bottom: calc(var(--content-margin) / 10);
     
     background: var(--content-background);
     border-radius: var(--content-border-radius);
@@ -228,7 +218,7 @@ h3 {
 
 
 /*=== IMAGE BREAK ===*/
-/*The parallax scrolling effect. Not too sure about its compatibility though*/
+/*The parallax scrolling effect. It doesn't have the best compatibility, but it still works as an image if not supported. This could be done by JS, but it is extremely resource intensive*/
 .image-break {
     min-height: 100px;
     

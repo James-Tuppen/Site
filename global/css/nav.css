@@ -56,9 +56,31 @@
 		float: none;
 		text-align: center;
 	}
-	#top-nav-container:not(.show) .nav-item:not(:first-child) {
+	#top-nav-container:not(.show) .nav-item:not(#hamburger-wrapper):not(#theme-toggle-wrapper) {
 		display: none;
 	}
+	
+	
+	#theme-toggle-wrapper {
+		width: 50%;
+		display: inline-block !important;
+	}
+	#hamburger-wrapper {
+		width: 50% !important;
+		display: inline-block !important;
+	}
+	#hamburger {
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+	}
+	#theme-toggle {
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+	}
+}
+
+#theme-toggle-wrapper {
+    float: right !important;
 }
 
 #top-nav .nav-item {
