@@ -99,8 +99,8 @@ body {
 
 /*-Dark mode*/
 body.dark-mode {
-    --background: #181A1B; /*Fallback*/
-    --content-background: rgba(0, 0, 0, 0.6);
+    --background: #181A1B; /*Fallback in case the image doesn't load*/
+    --content-background: rgba(0, 0, 0, 0.7);
     --text: #dadada;
     --nav-text: #eeeeee;
     --left-nav-text: #cccccc;
@@ -119,7 +119,7 @@ body.dark-mode {
 /*-Light mode*/
 body:not(.dark-mode) {
     --background: #f0f0f0; /*Fallback in case the image doesn't load*/
-    --content-background: rgba(255, 255, 255, 0.7);
+    --content-background: rgba(255, 255, 255, 0.8);
     --text: #202124;
     --nav-text: #d6d6d6;
     --footer-text: #d6d6d6;

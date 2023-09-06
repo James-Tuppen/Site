@@ -10,7 +10,10 @@
     left: var(--left-nav-width);
     width: min(var(--left-nav-margin-right), calc((var(--left-nav-margin-right) - 1px - ((100vw - (var(--left-nav-width) + var(--left-nav-margin-right) + var(--content-width))) / 2)) * 2));
 } */
-
+/* img {
+    outline: 1px solid red !important;
+    filter: invert(100%) !important;
+} */
 
 
 .content-item {
@@ -84,7 +87,7 @@ body {
     margin-right: auto;
     margin-top: var(--content-margin);
     margin-bottom: var(--content-margin);
-    padding-bottom: calc(var(--content-margin) / 10);
+    padding-bottom: 1px; /*Makes the bottom margin of its children not overflow somehow?*/
     
     background: var(--content-background);
     border-radius: var(--content-border-radius);

@@ -1,4 +1,4 @@
-This site is designed to teach people about the dangers of malware, identity theft, tracking, fingerprinting, hacking and more. Due to the rapid improvements in technology in recent years, it is vital to educate people about the dangers of the internet and the malicious content on it. You can use the navigation bar above to learn more about the topics covered on this site.
+This site is designed to teach people about the dangers of malware, identity theft, tracking, digital fingerprinting, hacking and more. Due to the rapid improvements in technology in recent years, it is vital to educate people about the dangers of the internet and the malicious content on it. You can use the navigation bar above to learn more about the topics covered on this site.
 
 
 
