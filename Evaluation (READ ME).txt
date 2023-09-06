@@ -1,0 +1,37 @@
+The 90 second limit was extremely difficult to work within, so I had to keep everything super short and speak really fast. I'm including this script so you can tell what I am saying.
+
+230 WPM - I'm beginning to feel like a rap god.
+
+- Overview
+The topic I have chosen is “being safe online”. My site primarily covers malicious content, which usually exists to harm the target user or steal money, passwords, or personal info.
+
+- Innovation
+The primary purpose of the site is to educate visitors, so information is necessary. However, this website needs to appeal to people of all ages, so I added colours, images and animations. I also added responsive element sizing to support different screen sizes.
+
+- Innovation (complexity)
+The code of my site is complex and very tedious to edit. Normally people use tools to manage this, however I think it’s important to have a base understanding of how it works before using such tools.
+
+- Sustainability
+My site’s information will become outdated with time, so I added a “last updated” notice in the footer.
+
+- Risk
+The main risk in programming is loss of work, so I used Github as a cloud backup.
+
+- Obstacles
+A few obstacles I came across were:
+Firstly, trying to fit everything on a tiny screen.
+
+Secondly, a major part of my code relied on the `ScrollEnd` event. As it turns out, webkit has not implemented this, so I made a callback function with a delay.
+
+And third, I learned that flexboxes are a nightmare. One particular flexbox took 10 hours of troubleshooting.
+
+- Peer testing
+I peer tested throughout the creation of this site, asking people about design choices and applying their feedback as I went.
+
+- Version 2
+If I were to make a version 2 of the website, I would make the colour scheme a lot more consistent, and add proper light mode support.
+
+- What I learned
+I learned to get the base functionality down first. Work on a skeleton of the project before adding any content whatsoever.
+
+And lastly, use preprocessors. CSS editing was extremely tedious, and I can now properly understand why people use the tools that have been made by the developers before them.
