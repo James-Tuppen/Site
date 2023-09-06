@@ -121,8 +121,8 @@ body:not(.dark-mode) {
     --background: #f0f0f0; /*Fallback in case the image doesn't load*/
     --content-background: rgba(255, 255, 255, 0.8);
     --text: #202124;
-    --nav-text: #d6d6d6;
-    --footer-text: #d6d6d6;
+    --nav-text: #eeeeee;
+    --footer-text: #eeeeee;
     --title-text: #202124;
     
     --content-blur: blur(10px);
