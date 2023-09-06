@@ -64,7 +64,7 @@ function addNavClickEvents() {
 
     //Top nav
     document.querySelectorAll('#top-nav-container > .nav-item').forEach(function (navItem) {
-        if (navItem.childNodes[0].tagName != 'A' && navItem.childNodes[0].id != 'hamburger') {
+        if (navItem.childNodes[0].tagName != 'A' && navItem.childNodes[0].id != 'hamburger' && navItem.childNodes[0].id != 'theme-toggle') {
             navItem.onclick = (function () {
                 isScrollTo = true;
                 smoothScroll(0).then(() => {
@@ -108,9 +108,19 @@ function addLeftNavToggle() {
     })
 }
 
+function addThemeToggle() {
+    document.getElementById('theme-toggle').onclick = (function () {
+        document.body.classList.toggle('dark-mode');
+        
+        localStorage.setItem('light-theme',
+            localStorage.getItem('light-theme') == 0 ? 1 : 0
+        );
+    })
+}
+
 const obj = {
     get detectionBufferZone() {
-        const bufferZone = minBufferZone + (maxBufferZone - minBufferZone) * (document.documentElement.scrollHeight - (window.scrollY + window.innerHeight)) / document.documentElement.scrollHeight; //MORE STASTISFYING MATHS :D
+        const bufferZone = minBufferZone + (maxBufferZone - minBufferZone) * (document.documentElement.scrollHeight - (window.scrollY + window.innerHeight)) / document.documentElement.scrollHeight;
         //console.log(bufferZone);
         return bufferZone;
     }
@@ -126,12 +136,23 @@ let isScrollTo = false;
 
 //-Run
 document.addEventListener('DOMContentLoaded', function () {
+    
+    if (localStorage.getItem('light-theme') == 1) {
+        document.body.classList.remove('dark-mode');
+    }
+    
+    if (!localStorage.getItem('light-theme')) {
+        localStorage.setItem('light-theme', 0);
+    }
+    
+    addThemeToggle();
 
     //Add click events to the nav buttons
     addNavClickEvents();
 
     //Add the event to toggle the left nav on mobile
     addLeftNavToggle();
+    
 
     //Call the scroll function when the scroll event listener is fired
     window.addEventListener('scroll', function (e) {
